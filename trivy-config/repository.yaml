@@ -1,0 +1,4 @@
+repositories:
+  - name: darkedges-demo
+    url: http://vex-server
+    enabled: true

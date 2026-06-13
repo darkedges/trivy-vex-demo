@@ -1,0 +1,15 @@
+{
+  "name": "DarkEdges Demo VEX Repository",
+  "description": "Demo VEX repository for the Trivy/Wiz CVE-suppression POC covering pingidentity/pingaccess. All statements are DEMO assessments, not real exploitability analysis.",
+  "versions": [
+    {
+      "spec_version": "0.1",
+      "locations": [
+        {
+          "url": "http://vex-server/v0.1/vex-data.tar.gz"
+        }
+      ],
+      "update_interval": "1h"
+    }
+  ]
+}

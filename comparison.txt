@@ -1,0 +1,31 @@
+VEX suppression before/after — pingidentity/pingaccess:8.3.4-edge
+digest sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c
+Trivy v0.71.0, OpenVEX v0.2.0, 2026-06-13
+
+                              baseline    after VEX (--vex file)   after VEX (--vex repo)
+                              --------    ----------------------   ----------------------
+CRITICAL                             2                         0                        0
+HIGH                                18                         0                        0
+MEDIUM                              42                         0                        0
+LOW                                  8                         0                        0
+TOTAL findings reported             70                         0                        0
+Suppressed (not_affected)            0                        70                       70
+Unique CVE/GHSA IDs                 51                        51 suppressed            51 suppressed
+
+All 70 suppressed findings are recorded in suppressed-report.json under
+Results[].ExperimentalModifiedFindings with:
+  Type=ignored  Statement=vulnerable_code_not_in_execute_path
+(visible in scan output when --show-suppressed is passed)
+
+Derived image pingaccess-vex:8.3.4-edge-demo (embedded VEX, never pushed,
+therefore no repo digest):
+  (a) --vex local file        70 findings, 0 suppressed
+  (b) --vex repo              70 findings, 0 suppressed
+  (c) embedded VEX only       70 findings, 0 suppressed
+Reason: statements bind to the BASE image digest; a local-only derived image
+has no repo digest, so the pkg:oci product purl cannot match. Trivy does NOT
+auto-discover VEX files embedded in the image filesystem (see README).
+
+Source reports: baseline-report.json / suppressed-report.json /
+rescan-original-repo.json / rescan-a-local-vex.json / rescan-b-repo.json /
+rescan-c-embedded-only.json
