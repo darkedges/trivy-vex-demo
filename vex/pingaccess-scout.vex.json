@@ -1,0 +1,723 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://darkedges.com/vex/demo/pingaccess/scout-consolidated",
+  "author": "DarkEdges Security <nirving@darkedges.com>",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2020-36518"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.534860102Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-28168"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.568156438Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-34428"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.600688109Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-46877"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.637929491Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-2047"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.693350652Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42003"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.736313548Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42004"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.801162193Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-46337"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.834948379Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26048"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.869462372Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26049"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.932632992Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-33201"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.969158253Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-40167"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.00517064Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-13009"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.089833107Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-29857"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.121931217Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-30171"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.15710343Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-34447"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.190247408Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38808"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.227556778Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38820"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.290168122Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-47554"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.326546409Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-6763"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.361913201Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-8184"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.394940479Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-11143"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.432283555Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-22233"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.468546946Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-41249"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.533579114Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-46392"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.567996538Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48924"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.60398827Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48976"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.641629103Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-49128"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.68530442Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-52999"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.721056424Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8885"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.794341008Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8916"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.832629204Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-2332"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.870813901Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-27145"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.936517407Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34477"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:26.975123518Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34478"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.018305663Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34480"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.070848808Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34481"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.108976612Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41417"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.157250936Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42504"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.193138151Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42507"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.226533944Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42578"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.259866703Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42580"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.294947707Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42581"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.326607173Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42583"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.36314938Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42584"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.398567412Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42585"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.434870081Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42587"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.468255002Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-44249"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.5024898Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-45416"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.537259659Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-5588"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.573282183Z"
+    },
+    {
+      "vulnerability": {
+        "name": "GHSA-72hv-8253-57qq"
+      },
+      "products": [
+        {
+          "@id": "pkg:docker/pingidentity/pingaccess@8.3.4-edge"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:27.605651504Z"
+    }
+  ],
+  "timestamp": "2026-06-13T03:52:27Z"
+}

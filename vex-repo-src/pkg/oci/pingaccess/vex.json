@@ -1,0 +1,723 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://darkedges.com/vex/demo/pingaccess/consolidated",
+  "author": "DarkEdges Security <nirving@darkedges.com>",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2020-36518"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.270127656Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-28168"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.304986074Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-34428"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.339741059Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-46877"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.375736561Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-2047"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.409928513Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42003"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.442675049Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42004"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.47544973Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-46337"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.509807387Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26048"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.543217902Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26049"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.576821185Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-33201"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.613255451Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-40167"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.649691926Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-13009"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.68209221Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-29857"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.71607237Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-30171"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.749472254Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-34447"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.809943887Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38808"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.844662634Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38820"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.883403561Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-47554"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.951062374Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-6763"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:23.989466006Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-8184"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.023925688Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-11143"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.057459228Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-22233"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.093235402Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-41249"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.129326804Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-46392"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.165239757Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48924"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.199337248Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48976"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.232577362Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-49128"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.269564153Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-52999"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.308958389Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8885"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.369449154Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8916"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.405946669Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-2332"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.442654885Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-27145"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.479970125Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34477"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.517098255Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34478"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.553320823Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34480"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.5864116Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34481"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.621597782Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41417"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.685288005Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42504"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.722333261Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42507"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.782131422Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42578"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.820151076Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42580"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.860248801Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42581"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.905337071Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42583"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.955891426Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42584"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:24.996836888Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42585"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.038129538Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42587"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.071975576Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-44249"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.107926789Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-45416"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.142953872Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-5588"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.176631131Z"
+    },
+    {
+      "vulnerability": {
+        "name": "GHSA-72hv-8253-57qq"
+      },
+      "products": [
+        {
+          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-13T03:52:25.211032259Z"
+    }
+  ],
+  "timestamp": "2026-06-13T03:52:25Z"
+}

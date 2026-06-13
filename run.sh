@@ -61,11 +61,23 @@ docker info --format '{{.ServerVersion}} ({{.OSType}}/{{.Architecture}})'
 ok "docker is up"
 pause
 
-step 2 "Build toolchain image (trivy + vexctl)"
+step 2 "Build toolchain image (trivy + vexctl + Docker Scout)"
 docker build -t vex-toolchain:latest toolchain/
 docker run --rm vex-toolchain:latest trivy --version | head -1
 docker run --rm vex-toolchain:latest vexctl version 2>&1 | grep GitVersion
+docker run --rm "${SOCK[@]}" vex-toolchain:latest docker scout version 2>&1 | head -3 || \
+  printf '%s[NOTE] docker scout version failed — Scout commands will run on the host instead.\n        Install Scout: https://docs.docker.com/scout/install/%s\n' "$YELLOW" "$RESET"
 ok "vex-toolchain:latest built"
+# Check containerd image store — required for Scout attestations (steps 9-11).
+# If not active those steps are skipped automatically; all other steps continue.
+printf '  Checking containerd image store... '
+if docker info 2>/dev/null | grep -q "containerd-snapshotter: true"; then
+  CONTAINERD_ACTIVE=1
+  printf '%sactive%s\n' "$GREEN" "$RESET"
+else
+  CONTAINERD_ACTIVE=0
+  printf '%snot detected — Scout attestation steps (9-11) will be skipped%s\n' "$YELLOW" "$RESET"
+fi
 pause
 
 step 3 "Pull base image and show digest"
@@ -83,10 +95,11 @@ show_results baseline-report.json "Baseline results"
 ok "baseline saved"
 pause
 
-step 5 "Generate OpenVEX statements (one per CVE) + merged document"
+step 5 "Generate OpenVEX statements — pkg:oci (Trivy/Wiz) + pkg:docker (Scout)"
 docker run --rm "${WORK[@]}" vex-toolchain:latest \
-  sh -c "tr -d '\r' < /work/scripts/generate-vex.sh > /tmp/g.sh && sh /tmp/g.sh" | tail -3
-ok "vex/statements/*.openvex.json + vex/pingaccess-8.3.4-edge.openvex.json"
+  sh -c "tr -d '\r' < /work/scripts/generate-vex.sh > /tmp/g.sh && sh /tmp/g.sh" | tail -6
+ok "vex/statements/*.openvex.json   (Trivy/Wiz channel, pkg:oci)"
+ok "vex/statements-scout/*.vex.json (Scout channel, pkg:docker)"
 pause
 
 step 6 "Assemble VEX repository (spec v0.1 archive)"
@@ -113,13 +126,67 @@ docker run --rm --network vexnet "${CACHE[@]}" "${CONF[@]}" vex-toolchain:latest
 ok "trivy resolved the repository"
 pause
 
-step 9 "Build derived image with embedded VEX"
-docker build -f embed/Dockerfile -t "$DERIVED" . >/dev/null
-docker image inspect "$DERIVED" --format 'RepoDigests={{json .RepoDigests}} (empty = local-only, expected)'
-ok "$DERIVED built"
+step 9 "Scout Phase 5a — dry-run CVE scan with local VEX docs"
+if [ "$CONTAINERD_ACTIVE" = "0" ]; then
+  printf '%sSkipped — containerd image store not active.%s\n' "$YELLOW" "$RESET"
+elif command -v docker >/dev/null && docker scout version >/dev/null 2>&1; then
+  docker scout cves "$IMAGE" --vex-location "$SCRIPT_DIR/vex" 2>&1 | tail -30 || {
+    printf '%s[NOTE] docker scout cves failed. If auth is needed: docker login%s\n' "$YELLOW" "$RESET"
+  }
+  ok "not_affected CVEs should be absent from the Scout output above"
+else
+  printf '%s[NOTE] docker scout not found on this host. Install: https://docs.docker.com/scout/install/%s\n' "$YELLOW" "$RESET"
+fi
 pause
 
-step 10 "Suppression proof on the digest-pinned ORIGINAL image"
+step 10 "Scout Phase 5b — local registry + push + Scout VEX attestations"
+if [ "$CONTAINERD_ACTIVE" = "0" ]; then
+  printf '%sSkipped — containerd image store not active.%s\n' "$YELLOW" "$RESET"
+else
+  SCOUT_REG="localhost:5000"
+  SCOUT_IMAGE="${SCOUT_REG}/pingidentity/pingaccess:8.3.4-edge"
+  docker rm -f vex-registry >/dev/null 2>&1 || true
+  docker run -d -p 5000:5000 --name vex-registry registry:2 >/dev/null
+  ok "local registry:2 started on port 5000"
+  docker tag "$IMAGE" "$SCOUT_IMAGE"
+  docker push "$SCOUT_IMAGE"
+  ok "pushed $SCOUT_IMAGE"
+  for VEX_FILE in "$SCRIPT_DIR"/vex/statements-scout/*.vex.json; do
+    CVE=$(basename "$VEX_FILE" .vex.json)
+    docker scout attestation add \
+      --file "$VEX_FILE" \
+      --predicate-type https://openvex.dev/ns/v0.2.0 \
+      "$SCOUT_IMAGE" || \
+      printf '%s[NOTE] attestation add failed for %s — registry:2 may not support OCI artifacts%s\n' "$YELLOW" "$CVE" "$RESET"
+  done
+  ok "Scout VEX attestations attached to $SCOUT_IMAGE"
+fi
+pause
+
+step 11 "Scout Phase 5c — re-scan to prove Scout suppression"
+if [ "$CONTAINERD_ACTIVE" = "0" ]; then
+  printf '%sSkipped — containerd image store not active.%s\n' "$YELLOW" "$RESET"
+else
+  docker scout cves "$SCOUT_IMAGE" 2>&1 | tee "$SCRIPT_DIR/scout-suppressed-report.txt" || \
+    printf '%s[NOTE] scout cves on attested image failed — see scout-suppressed-report.txt%s\n' "$YELLOW" "$RESET"
+  ok "scout-suppressed-report.txt saved — not_affected CVEs should be absent"
+  printf '  Scout baseline CVE count (pre-attestation): '
+  docker scout cves "$IMAGE" 2>&1 | grep -c "CVE-" || echo "unknown"
+  printf '  Scout attested CVE count (post-attestation): '
+  grep -c "CVE-" "$SCRIPT_DIR/scout-suppressed-report.txt" 2>/dev/null || echo "unknown"
+fi
+pause
+
+step 12 "Build derived image with embedded VEX (filesystem fallback — see README)"
+# IMPORTANT: mutual-exclusivity rule — if the image has ANY attestation (including
+# provenance auto-added by BuildKit), Scout ignores filesystem VEX entirely and reads
+# only attestations. To use filesystem embed, build with --provenance=false --sbom=false.
+docker build -f embed/Dockerfile -t "$DERIVED" . >/dev/null
+docker image inspect "$DERIVED" --format 'RepoDigests={{json .RepoDigests}} (empty = local-only, expected)'
+ok "$DERIVED built (--provenance/--sbom not passed, so no attestations added)"
+pause
+
+step 13 "Trivy suppression proof on the digest-pinned ORIGINAL image"
 docker run --rm "${SOCK[@]}" "${CACHE[@]}" "${WORK[@]}" vex-toolchain:latest \
   trivy image --quiet --skip-db-update --format json --show-suppressed \
   --vex /work/vex/pingaccess-8.3.4-edge.openvex.json \
@@ -136,7 +203,7 @@ show_results rescan-original-repo.json "b) --vex repo (original image)"
 ok "expected: 0 remaining findings, 70 suppressed for both"
 pause
 
-step 11 "Re-scan the DERIVED image three ways (expected: no suppression)"
+step 14 "Trivy re-scan of the DERIVED image three ways (expected: no suppression)"
 docker run --rm "${SOCK[@]}" "${CACHE[@]}" "${WORK[@]}" vex-toolchain:latest \
   trivy image --quiet --skip-db-update --format json --show-suppressed \
   --vex /work/vex/pingaccess-8.3.4-edge.openvex.json \
@@ -150,25 +217,27 @@ docker run --rm "${SOCK[@]}" "${CACHE[@]}" "${WORK[@]}" vex-toolchain:latest \
 show_results rescan-a-local-vex.json "a) --vex file (derived image)"
 show_results rescan-b-repo.json "b) --vex repo (derived image)"
 show_results rescan-c-embedded-only.json "c) embedded VEX only (derived image)"
-printf '%sNo suppression here is the documented lesson: VEX binds to the base digest;\nlocal derived images have none, and Trivy does not read in-image VEX files.%s\n' "$YELLOW" "$RESET"
+printf '%sNo suppression: VEX binds to the base digest; local derived images have none,\nand Trivy does not read in-image VEX files.%s\n' "$YELLOW" "$RESET"
 pause
 
-step 12 "Summary"
+step 15 "Summary"
 printf '%s%s\n' "$BOLD" "----------------------------------------------"
-printf 'baseline : %s\n' "$(counts baseline-report.json)"
-printf 'vex file : %s\n' "$(counts suppressed-report.json)"
-printf 'vex repo : %s\n' "$(counts rescan-original-repo.json)"
+printf 'baseline     : %s\n' "$(counts baseline-report.json)"
+printf 'trivy --vex  : %s\n' "$(counts suppressed-report.json)"
+printf 'trivy repo   : %s\n' "$(counts rescan-original-repo.json)"
+printf 'scout attest : see scout-suppressed-report.txt (Step 11)\n'
 printf '%s%s\n' "----------------------------------------------" "$RESET"
 ok "details: comparison.txt, README.md, wiz-integration.md"
 
 if [ "$NO_PAUSE" != "-y" ]; then
-  printf '%sTear down vex-server + vexnet now? [y/N] %s' "$YELLOW" "$RESET"
+  printf '%sTear down vex-server, vex-registry + vexnet now? [y/N] %s' "$YELLOW" "$RESET"
   read -r ANSWER
   if [ "${ANSWER:-n}" = "y" ] || [ "${ANSWER:-n}" = "Y" ]; then
-    docker rm -f vex-server >/dev/null && docker network rm vexnet >/dev/null
+    docker rm -f vex-server vex-registry >/dev/null 2>&1 || true
+    docker network rm vexnet >/dev/null 2>&1 || true
     ok "torn down"
   else
-    printf 'left running — teardown later with: docker rm -f vex-server && docker network rm vexnet\n'
+    printf 'left running — teardown: docker rm -f vex-server vex-registry && docker network rm vexnet\n'
   fi
 fi
 printf '%sDone.%s\n' "$GREEN" "$RESET"
