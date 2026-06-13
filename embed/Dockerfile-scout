@@ -1,0 +1,15 @@
+# Minimal derived image for the Docker Scout VEX attestation demo.
+# Built with --provenance=true --sbom=true to create the OCI manifest-list
+# structure that docker scout attestation add requires before it can attach
+# a VEX document alongside the provenance and SBOM attestations.
+#
+# NO filesystem VEX is COPY'd here. Embedding VEX files while also using
+# attestations triggers Scout's attestation-vs-filesystem mutex rule:
+# if ANY attestation is present, Scout ignores filesystem VEX entirely.
+# The VEX is attached post-build via docker scout attestation add (step 10).
+#
+# Build command (run.sh step 10):
+#   docker build --provenance=true --sbom=true \
+#     --tag localhost:5000/pingidentity/pingaccess:8.3.4-edge --push \
+#     -f embed/Dockerfile-scout .
+FROM pingidentity/pingaccess:8.3.4-edge

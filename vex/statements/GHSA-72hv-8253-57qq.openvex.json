@@ -1,7 +1,7 @@
 {
   "@context": "https://openvex.dev/ns/v0.2.0",
   "@id": "https://darkedges.com/vex/demo/pingaccess/GHSA-72hv-8253-57qq",
-  "author": "DarkEdges Security \u003cnirving@darkedges.com\u003e",
+  "author": "DarkEdges Security <nirving@darkedges.com>",
   "version": 1,
   "statements": [
     {
@@ -10,14 +10,25 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.17.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:53.076799222Z"
+      "timestamp": "2026-06-13T12:02:32.086882583Z"
     }
   ],
-  "timestamp": "2026-06-13T04:11:53Z"
+  "timestamp": "2026-06-13T12:02:32Z"
 }

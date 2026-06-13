@@ -1,0 +1,623 @@
+    ...Storing image for indexing
+    v Image stored for indexing
+    ...Indexing
+    v Indexed 293 packages
+    ! failed to delete temporary image archive C:\WINDOWS\TEMP\docker-scout\sha256\4cfe8eaef4c851f987f5a1f9edfca512e6316cc18b30b5e0123a6615cb1dc334\ceec4bb1-1287-401b-9c20-6708d4f7dfb0: unlinkat C:\WINDOWS\TEMP\docker-scout\sha256\4cfe8eaef4c851f987f5a1f9edfca512e6316cc18b30b5e0123a6615cb1dc334\ceec4bb1-1287-401b-9c20-6708d4f7dfb0: The process cannot access the file because it is being used by another process.    v Loaded 3 VEX documents
+    x Detected 30 vulnerable packages with a total of 53 vulnerabilities
+
+
+## Overview
+
+                   Γöé                   Analyzed Image                    
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö╝ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+ Target            Γöé  localhost:5000/pingidentity/pingaccess:8.3.4-edge  
+   digest          Γöé  4cfe8eaef4c8                                       
+   platform        Γöé linux/amd64                                         
+   vulnerabilities Γöé    1C    17H    39M     7L                          
+   size            Γöé 269 MB                                              
+   packages        Γöé 293                                                 
+
+
+## Packages and Vulnerabilities
+
+   1C     0H     0M     0L  org.apache.derby/derby 10.14.2.0
+pkg:maven/org.apache.derby/derby@10.14.2.0
+
+    x CRITICAL CVE-2022-46337 [Improper Neutralization of Special Elements in Output Used by a Downstream Component ('Injection')]
+      https://scout.docker.com/v/CVE-2022-46337?s=github&n=derby&ns=org.apache.derby&t=maven&vr=%3E%3D10.1.1.0%2C%3C10.14.3
+      Affected range : >=10.1.1.0                                   
+                     : <10.14.3                                     
+      Fixed version  : 10.14.3                                      
+      CVSS Score     : 9.8                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H 
+    
+
+   0C     4H     0M     0L  com.fasterxml.jackson.core/jackson-databind 2.11.1
+pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1
+
+    x HIGH CVE-2022-42004 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2022-42004?s=github&n=jackson-databind&ns=com.fasterxml.jackson.core&t=maven&vr=%3E%3D2.4.0-rc1%2C%3C2.12.7.1
+      Affected range : >=2.4.0-rc1                                                     
+                     : <2.12.7.1                                                       
+      Fixed version  : 2.12.7.1                                                        
+      CVSS Score     : 8.2                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N 
+    
+    x HIGH CVE-2022-42003 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2022-42003?s=github&n=jackson-databind&ns=com.fasterxml.jackson.core&t=maven&vr=%3E%3D2.4.0-rc1%2C%3C2.12.7.1
+      Affected range : >=2.4.0-rc1                                  
+                     : <2.12.7.1                                    
+      Fixed version  : 2.12.7.1                                     
+      CVSS Score     : 7.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+    
+    x HIGH CVE-2021-46877 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2021-46877?s=github&n=jackson-databind&ns=com.fasterxml.jackson.core&t=maven&vr=%3E%3D2.10.0%2C%3C2.12.6
+      Affected range : >=2.10.0                                     
+                     : <2.12.6                                      
+      Fixed version  : 2.12.6                                       
+      CVSS Score     : 7.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+    
+    x HIGH CVE-2020-36518 [Out-of-bounds Write]
+      https://scout.docker.com/v/CVE-2020-36518?s=github&n=jackson-databind&ns=com.fasterxml.jackson.core&t=maven&vr=%3C%3D2.12.6.0
+      Affected range : <=2.12.6.0                                   
+      Fixed version  : 2.12.6.1                                     
+      CVSS Score     : 7.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+    
+
+   0C     2H     4M     0L  io.netty/netty-codec-http 4.1.132.Final
+pkg:maven/io.netty/netty-codec-http@4.1.132.Final
+
+    x HIGH CVE-2026-42587 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2026-42587?s=github&n=netty-codec-http&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
+      Affected range : <=4.1.132.Final                              
+      Fixed version  : 4.1.133.Final                                
+      CVSS Score     : 7.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+    
+    x HIGH CVE-2026-42584 [Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')]
+      https://scout.docker.com/v/CVE-2026-42584?s=github&n=netty-codec-http&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
+      Affected range : <=4.1.132.Final                              
+      Fixed version  : 4.1.133.Final                                
+      CVSS Score     : 7.3                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L 
+    
+    x MEDIUM CVE-2026-42585 [Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')]
+      https://scout.docker.com/v/CVE-2026-42585?s=github&n=netty-codec-http&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
+      Affected range : <=4.1.132.Final                              
+      Fixed version  : 4.1.133.Final                                
+      CVSS Score     : 6.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+    x MEDIUM CVE-2026-42580 [Integer Overflow or Wraparound]
+      https://scout.docker.com/v/CVE-2026-42580?s=github&n=netty-codec-http&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
+      Affected range : <=4.1.132.Final                              
+      Fixed version  : 4.1.133.Final                                
+      CVSS Score     : 6.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L 
+    
+    x MEDIUM CVE-2026-42581 [Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')]
+      https://scout.docker.com/v/CVE-2026-42581?s=github&n=netty-codec-http&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
+      Affected range : <=4.1.132.Final                              
+      Fixed version  : 4.1.133.Final                                
+      CVSS Score     : 5.8                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:L/A:N 
+    
+    x MEDIUM CVE-2026-41417 [Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')]
+      https://scout.docker.com/v/CVE-2026-41417?s=github&n=netty-codec-http&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
+      Affected range : <=4.1.132.Final                              
+      Fixed version  : 4.1.133.Final                                
+      CVSS Score     : 5.3                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N 
+    
+
+   0C     2H     0M     0L  io.netty/netty-handler 4.1.132.Final
+pkg:maven/io.netty/netty-handler@4.1.132.Final
+
+    x HIGH CVE-2026-44249 [Improper Access Control]
+      https://scout.docker.com/v/CVE-2026-44249?s=github&n=netty-handler&ns=io.netty&t=maven&vr=%3C%3D4.1.134.Final
+      Affected range : <=4.1.134.Final                              
+      Fixed version  : 4.1.135.Final                                
+      CVSS Score     : 8.1                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H 
+    
+    x HIGH CVE-2026-45416 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2026-45416?s=github&n=netty-handler&ns=io.netty&t=maven&vr=%3C%3D4.1.134.Final
+      Affected range : <=4.1.134.Final                              
+      Fixed version  : 4.1.135.Final                                
+      CVSS Score     : 7.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+    
+
+   0C     1H     3M     2L  org.eclipse.jetty/jetty-server 9.4.39.v20210325
+pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325
+
+    x HIGH CVE-2024-13009 [Improper Resource Shutdown or Release]
+      https://scout.docker.com/v/CVE-2024-13009?s=github&n=jetty-server&ns=org.eclipse.jetty&t=maven&vr=%3E%3D9.4.0%2C%3C%3D9.4.56
+      Affected range : >=9.4.0                                      
+                     : <=9.4.56                                     
+      Fixed version  : 9.4.57.v20241219                             
+      CVSS Score     : 7.2                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N 
+    
+    x MEDIUM CVE-2024-8184 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2024-8184?s=github&n=jetty-server&ns=org.eclipse.jetty&t=maven&vr=%3E%3D9.3.12%2C%3C%3D9.4.55
+      Affected range : >=9.3.12                                     
+                     : <=9.4.55                                     
+      Fixed version  : 9.4.56                                       
+      CVSS Score     : 5.9                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H 
+    
+    x MEDIUM CVE-2023-40167 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2023-40167?s=gitlab&n=jetty-server&ns=org.eclipse.jetty&t=maven&vr=%3E%3D9.0.0%2C%3C9.4.52
+      Affected range : >=9.0.0                                      
+                     : <9.4.52                                      
+      Fixed version  : 9.4.52.v20230823, 10.0.16, 11.0.16, 12.0.1   
+      CVSS Score     : 5.3                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N 
+    
+    x MEDIUM CVE-2023-26048 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2023-26048?s=github&n=jetty-server&ns=org.eclipse.jetty&t=maven&vr=%3C9.4.51.v20230217
+      Affected range : <9.4.51.v20230217                            
+      Fixed version  : 9.4.51.v20230217                             
+      CVSS Score     : 5.3                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L 
+    
+    x LOW CVE-2021-34428 [Insufficient Session Expiration]
+      https://scout.docker.com/v/CVE-2021-34428?s=github&n=jetty-server&ns=org.eclipse.jetty&t=maven&vr=%3C%3D9.4.40
+      Affected range : <=9.4.40                                     
+      Fixed version  : 9.4.41                                       
+      CVSS Score     : 3.5                                          
+      CVSS Vector    : CVSS:3.1/AV:P/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+    x LOW CVE-2023-26049 [Exposure of Sensitive Information to an Unauthorized Actor]
+      https://scout.docker.com/v/CVE-2023-26049?s=github&n=jetty-server&ns=org.eclipse.jetty&t=maven&vr=%3C9.4.51.v20230217
+      Affected range : <9.4.51.v20230217                            
+      Fixed version  : 9.4.51.v20230217                             
+      CVSS Score     : 2.4                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:H/UI:R/S:U/C:L/I:N/A:N 
+    
+
+   0C     1H     2M     2L  org.eclipse.jetty/jetty-http 9.4.39.v20210325
+pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325
+
+    x HIGH CVE-2026-2332 [Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')]
+      https://scout.docker.com/v/CVE-2026-2332?s=github&n=jetty-http&ns=org.eclipse.jetty&t=maven&vr=%3E%3D9.4.0%2C%3C%3D9.4.59
+      Affected range : >=9.4.0                                      
+                     : <=9.4.59                                     
+      Fixed version  : not fixed                                    
+      CVSS Score     : 7.4                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N 
+    
+    x MEDIUM CVE-2024-6763 [Improper Validation of Syntactic Correctness of Input]
+      https://scout.docker.com/v/CVE-2024-6763?s=github&n=jetty-http&ns=org.eclipse.jetty&t=maven&vr=%3E%3D7.0.0%2C%3C%3D12.0.11
+      Affected range : >=7.0.0                                                         
+                     : <=12.0.11                                                       
+      Fixed version  : 12.0.12                                                         
+      CVSS Score     : 6.3                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N 
+    
+    x MEDIUM CVE-2023-40167 [Improper Handling of Length Parameter Inconsistency]
+      https://scout.docker.com/v/CVE-2023-40167?s=github&n=jetty-http&ns=org.eclipse.jetty&t=maven&vr=%3E%3D9.0.0%2C%3C%3D9.4.51
+      Affected range : >=9.0.0                                      
+                     : <=9.4.51                                     
+      Fixed version  : 9.4.52                                       
+      CVSS Score     : 5.3                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N 
+    
+    x LOW CVE-2025-11143 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2025-11143?s=github&n=jetty-http&ns=org.eclipse.jetty&t=maven&vr=%3E%3D9.4.0%2C%3C%3D9.4.58
+      Affected range : >=9.4.0                                      
+                     : <=9.4.58                                     
+      Fixed version  : not fixed                                    
+      CVSS Score     : 3.7                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N 
+    
+    x LOW CVE-2022-2047 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2022-2047?s=github&n=jetty-http&ns=org.eclipse.jetty&t=maven&vr=%3C9.4.47
+      Affected range : <9.4.47                                      
+      Fixed version  : 9.4.47                                       
+      CVSS Score     : 2.7                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N 
+    
+
+   0C     1H     2M     0L  com.fasterxml.jackson.core/jackson-core 2.11.1
+pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1
+
+    x HIGH CVE-2025-52999 [Stack-based Buffer Overflow]
+      https://scout.docker.com/v/CVE-2025-52999?s=github&n=jackson-core&ns=com.fasterxml.jackson.core&t=maven&vr=%3C2.15.0
+      Affected range : <2.15.0                                                         
+      Fixed version  : 2.15.0                                                          
+      CVSS Score     : 8.7                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N 
+    
+    x MEDIUM GHSA-72hv-8253-57qq [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/GHSA-72hv-8253-57qq?s=github&n=jackson-core&ns=com.fasterxml.jackson.core&t=maven&vr=%3E%3D2.0.0%2C%3C%3D2.18.5
+      Affected range : >=2.0.0                                                         
+                     : <=2.18.5                                                        
+      Fixed version  : 2.18.6                                                          
+      CVSS Score     : 6.9                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N 
+    
+    x MEDIUM CVE-2025-49128 [Generation of Error Message Containing Sensitive Information]
+      https://scout.docker.com/v/CVE-2025-49128?s=github&n=jackson-core&ns=com.fasterxml.jackson.core&t=maven&vr=%3E%3D2.0.0%2C%3C2.13.0
+      Affected range : >=2.0.0                                      
+                     : <2.13.0                                      
+      Fixed version  : 2.13.0                                       
+      CVSS Score     : 4.0                                          
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N 
+    
+
+   0C     1H     2M     0L  stdlib 1.25.10
+pkg:golang/stdlib@1.25.10
+
+    x HIGH CVE-2026-42504
+      https://scout.docker.com/v/CVE-2026-42504?s=golang&n=stdlib&t=golang&vr=%3C1.25.11
+      Affected range : <1.25.11 
+      Fixed version  : 1.25.11  
+    
+    x MEDIUM CVE-2026-27145
+      https://scout.docker.com/v/CVE-2026-27145?s=golang&n=stdlib&t=golang&vr=%3C1.25.11
+      Affected range : <1.25.11 
+      Fixed version  : 1.25.11  
+    
+    x MEDIUM CVE-2026-42507
+      https://scout.docker.com/v/CVE-2026-42507?s=golang&n=stdlib&t=golang&vr=%3C1.25.11
+      Affected range : <1.25.11 
+      Fixed version  : 1.25.11  
+    
+
+   0C     1H     1M     0L  org.springframework/spring-core 5.3.33
+pkg:maven/org.springframework/spring-core@5.3.33
+
+    x HIGH CVE-2025-41249 [Improper Authorization]
+      https://scout.docker.com/v/CVE-2025-41249?s=github&n=spring-core&ns=org.springframework&t=maven&vr=%3E%3D5.3.0%2C%3C%3D5.3.44
+      Affected range : >=5.3.0                                      
+                     : <=5.3.44                                     
+      Fixed version  : not fixed                                    
+      CVSS Score     : 7.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N 
+    
+    x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-core&ns=org.springframework&t=maven&vr=%3C6.1.14
+      Affected range : <6.1.14                                      
+      Fixed version  : 6.1.14                                       
+      CVSS Score     : 4.8                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
+   0C     1H     1M     0L  com.fasterxml.jackson.core/jackson-core 2.13.1
+pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1
+
+    x HIGH CVE-2025-52999 [Stack-based Buffer Overflow]
+      https://scout.docker.com/v/CVE-2025-52999?s=github&n=jackson-core&ns=com.fasterxml.jackson.core&t=maven&vr=%3C2.15.0
+      Affected range : <2.15.0                                                         
+      Fixed version  : 2.15.0                                                          
+      CVSS Score     : 8.7                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N 
+    
+    x MEDIUM GHSA-72hv-8253-57qq [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/GHSA-72hv-8253-57qq?s=github&n=jackson-core&ns=com.fasterxml.jackson.core&t=maven&vr=%3E%3D2.0.0%2C%3C%3D2.18.5
+      Affected range : >=2.0.0                                                         
+                     : <=2.18.5                                                        
+      Fixed version  : 2.18.6                                                          
+      CVSS Score     : 6.9                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N 
+    
+
+   0C     1H     0M     0L  io.netty/netty-codec 4.1.132.Final
+pkg:maven/io.netty/netty-codec@4.1.132.Final
+
+    x HIGH CVE-2026-42583 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2026-42583?s=github&n=netty-codec&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
+      Affected range : <=4.1.132.Final                              
+      Fixed version  : 4.1.133.Final                                
+      CVSS Score     : 7.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+    
+
+   0C     1H     0M     0L  commons-io/commons-io 2.8.0
+pkg:maven/commons-io/commons-io@2.8.0
+
+    x HIGH CVE-2024-47554 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2024-47554?s=github&n=commons-io&ns=commons-io&t=maven&vr=%3E%3D2.0%2C%3C2.14.0
+      Affected range : >=2.0                                                           
+                     : <2.14.0                                                         
+      Fixed version  : 2.14.0                                                          
+      CVSS Score     : 8.7                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N 
+    
+
+   0C     1H     0M     0L  commons-fileupload/commons-fileupload 1.5
+pkg:maven/commons-fileupload/commons-fileupload@1.5
+
+    x HIGH CVE-2025-48976 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2025-48976?s=github&n=commons-fileupload&ns=commons-fileupload&t=maven&vr=%3E%3D1.0%2C%3C1.6.0
+      Affected range : >=1.0                                                           
+                     : <1.6.0                                                          
+      Fixed version  : 1.6.0                                                           
+      CVSS Score     : 8.7                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N 
+    
+
+   0C     0H     5M     0L  org.bouncycastle/bcprov-jdk15on 1.70
+pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70
+
+    x MEDIUM CVE-2024-34447 [Improper Validation of Certificate with Host Mismatch]
+      https://scout.docker.com/v/CVE-2024-34447?s=github&n=bcprov-jdk15on&ns=org.bouncycastle&t=maven&vr=%3E%3D1.61%2C%3C1.78
+      Affected range : >=1.61                                       
+                     : <1.78                                        
+      Fixed version  : 1.78                                         
+      CVSS Score     : 5.9                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N 
+    
+    x MEDIUM CVE-2024-30171 [Observable Discrepancy]
+      https://scout.docker.com/v/CVE-2024-30171?s=github&n=bcprov-jdk15on&ns=org.bouncycastle&t=maven&vr=%3C1.78
+      Affected range : <1.78                                        
+      Fixed version  : 1.78                                         
+      CVSS Score     : 5.9                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N 
+    
+    x MEDIUM CVE-2024-30172 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2024-30172?s=gitlab&n=bcprov-jdk15on&ns=org.bouncycastle&t=maven&vr=%3C1.78
+      Affected range : <1.78                                        
+      Fixed version  : 1.78                                         
+      CVSS Score     : 5.3                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L 
+    
+    x MEDIUM CVE-2024-29857 [Out-of-bounds Read]
+      https://scout.docker.com/v/CVE-2024-29857?s=github&n=bcprov-jdk15on&ns=org.bouncycastle&t=maven&vr=%3C1.78
+      Affected range : <1.78                                        
+      Fixed version  : 1.78                                         
+      CVSS Score     : 5.3                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L 
+    
+    x MEDIUM CVE-2023-33201 [Improper Certificate Validation]
+      https://scout.docker.com/v/CVE-2023-33201?s=github&n=bcprov-jdk15on&ns=org.bouncycastle&t=maven&vr=%3E%3D1.49%2C%3C%3D1.70
+      Affected range : >=1.49                                       
+                     : <=1.70                                       
+      Fixed version  : not fixed                                    
+      CVSS Score     : 5.3                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N 
+    
+
+   0C     0H     3M     0L  org.apache.logging.log4j/log4j-core 2.25.3
+pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3
+
+    x MEDIUM CVE-2026-34480 [Improper Encoding or Escaping of Output]
+      https://scout.docker.com/v/CVE-2026-34480?s=github&n=log4j-core&ns=org.apache.logging.log4j&t=maven&vr=%3E%3D2.0-alpha1%2C%3C2.25.4
+      Affected range : >=2.0-alpha1                                                    
+                     : <2.25.4                                                         
+      Fixed version  : 2.25.4                                                          
+      CVSS Score     : 6.9                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:L/SA:N 
+    
+    x MEDIUM CVE-2026-34478 [Improper Output Neutralization for Logs]
+      https://scout.docker.com/v/CVE-2026-34478?s=github&n=log4j-core&ns=org.apache.logging.log4j&t=maven&vr=%3E%3D2.21.0%2C%3C2.25.4
+      Affected range : >=2.21.0                                                        
+                     : <2.25.4                                                         
+      Fixed version  : 2.25.4                                                          
+      CVSS Score     : 6.9                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:L/SA:N 
+    
+    x MEDIUM CVE-2026-34477 [Improper Validation of Certificate with Host Mismatch]
+      https://scout.docker.com/v/CVE-2026-34477?s=github&n=log4j-core&ns=org.apache.logging.log4j&t=maven&vr=%3E%3D2.12.0%2C%3C2.25.4
+      Affected range : >=2.12.0                                                        
+                     : <2.25.4                                                         
+      Fixed version  : 2.25.4                                                          
+      CVSS Score     : 6.3                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:L/SA:N 
+    
+
+   0C     0H     2M     1L  org.springframework/spring-context 5.3.33
+pkg:maven/org.springframework/spring-context@5.3.33
+
+    x MEDIUM CVE-2024-38820 [Improper Handling of Case Sensitivity]
+      https://scout.docker.com/v/CVE-2024-38820?s=github&n=spring-context&ns=org.springframework&t=maven&vr=%3C%3D5.3.40
+      Affected range : <=5.3.40                                     
+      Fixed version  : not fixed                                    
+      CVSS Score     : 5.3                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N 
+    
+    x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-context&ns=org.springframework&t=maven&vr=%3C6.1.14
+      Affected range : <6.1.14                                      
+      Fixed version  : 6.1.14                                       
+      CVSS Score     : 4.8                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+    x LOW CVE-2025-22233 [Improper Input Validation]
+      https://scout.docker.com/v/CVE-2025-22233?s=github&n=spring-context&ns=org.springframework&t=maven&vr=%3C%3D5.3.39
+      Affected range : <=5.3.39                                     
+      Fixed version  : not fixed                                    
+      CVSS Score     : 3.1                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N 
+    
+
+   0C     0H     2M     0L  org.springframework/spring-expression 5.3.33
+pkg:maven/org.springframework/spring-expression@5.3.33
+
+    x MEDIUM CVE-2024-38808 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2024-38808?s=github&n=spring-expression&ns=org.springframework&t=maven&vr=%3C5.3.39
+      Affected range : <5.3.39                                                         
+      Fixed version  : 5.3.39                                                          
+      CVSS Score     : 5.1                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N 
+    
+    x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-expression&ns=org.springframework&t=maven&vr=%3C6.1.14
+      Affected range : <6.1.14                                      
+      Fixed version  : 6.1.14                                       
+      CVSS Score     : 4.8                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
+   0C     0H     2M     0L  org.bouncycastle/bcpkix-jdk15on 1.70
+pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70
+
+    x MEDIUM CVE-2026-5588 [Use of a Broken or Risky Cryptographic Algorithm]
+      https://scout.docker.com/v/CVE-2026-5588?s=github&n=bcpkix-jdk15on&ns=org.bouncycastle&t=maven&vr=%3E%3D1.49%2C%3C1.84
+      Affected range : >=1.49                                                                  
+                     : <1.84                                                                   
+      Fixed version  : 1.84                                                                    
+      CVSS Score     : 6.3                                                                     
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N/U:Green 
+    
+    x MEDIUM CVE-2025-8916 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2025-8916?s=github&n=bcpkix-jdk15on&ns=org.bouncycastle&t=maven&vr=%3E%3D1.44%2C%3C1.79
+      Affected range : >=1.44                                                                               
+                     : <1.79                                                                                
+      Fixed version  : 1.79                                                                                 
+      CVSS Score     : 6.3                                                                                  
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/S:P/R:U/RE:M/U:Amber 
+    
+
+   0C     0H     1M     0L  org.springframework/spring-jdbc 5.3.33
+pkg:maven/org.springframework/spring-jdbc@5.3.33
+
+    x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-jdbc&ns=org.springframework&t=maven&vr=%3C6.1.14
+      Affected range : <6.1.14                                      
+      Fixed version  : 6.1.14                                       
+      CVSS Score     : 4.8                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
+   0C     0H     1M     0L  commons-lang/commons-lang 2.6
+pkg:maven/commons-lang/commons-lang@2.6
+
+    x MEDIUM CVE-2025-48924 [Uncontrolled Recursion]
+      https://scout.docker.com/v/CVE-2025-48924?s=github&n=commons-lang&ns=commons-lang&t=maven&vr=%3E%3D2.0%2C%3C%3D2.6
+      Affected range : >=2.0                                        
+                     : <=2.6                                        
+      Fixed version  : not fixed                                    
+      CVSS Score     : 6.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
+   0C     0H     1M     0L  org.bouncycastle/bc-fips 2.0.0
+pkg:maven/org.bouncycastle/bc-fips@2.0.0
+
+    x MEDIUM CVE-2025-8885 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2025-8885?s=github&n=bc-fips&ns=org.bouncycastle&t=maven&vr=%3D2.0.0
+      Affected range : =2.0.0                                                                               
+      Fixed version  : 2.1.0                                                                                
+      CVSS Score     : 6.3                                                                                  
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/S:P/R:U/RE:M/U:Amber 
+    
+
+   0C     0H     1M     0L  commons-lang/commons-lang 2.4
+pkg:maven/commons-lang/commons-lang@2.4
+
+    x MEDIUM CVE-2025-48924 [Uncontrolled Recursion]
+      https://scout.docker.com/v/CVE-2025-48924?s=github&n=commons-lang&ns=commons-lang&t=maven&vr=%3E%3D2.0%2C%3C%3D2.6
+      Affected range : >=2.0                                        
+                     : <=2.6                                        
+      Fixed version  : not fixed                                    
+      CVSS Score     : 6.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
+   0C     0H     1M     0L  org.springframework/spring-beans 5.3.33
+pkg:maven/org.springframework/spring-beans@5.3.33
+
+    x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-beans&ns=org.springframework&t=maven&vr=%3C6.1.14
+      Affected range : <6.1.14                                      
+      Fixed version  : 6.1.14                                       
+      CVSS Score     : 4.8                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
+   0C     0H     1M     0L  org.apache.logging.log4j/log4j-layout-template-json 2.25.3
+pkg:maven/org.apache.logging.log4j/log4j-layout-template-json@2.25.3
+
+    x MEDIUM CVE-2026-34481 [Improper Encoding or Escaping of Output]
+      https://scout.docker.com/v/CVE-2026-34481?s=github&n=log4j-layout-template-json&ns=org.apache.logging.log4j&t=maven&vr=%3E%3D2.14.0%2C%3C2.25.4
+      Affected range : >=2.14.0                                                        
+                     : <2.25.4                                                         
+      Fixed version  : 2.25.4                                                          
+      CVSS Score     : 6.3                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:L/SA:N 
+    
+
+   0C     0H     1M     0L  org.glassfish.jersey.core/jersey-common 2.31
+pkg:maven/org.glassfish.jersey.core/jersey-common@2.31
+
+    x MEDIUM CVE-2021-28168 [Creation of Temporary File With Insecure Permissions]
+      https://scout.docker.com/v/CVE-2021-28168?s=github&n=jersey-common&ns=org.glassfish.jersey.core&t=maven&vr=%3E%3D2.28%2C%3C%3D2.33
+      Affected range : >=2.28                                       
+                     : <=2.33                                       
+      Fixed version  : 2.34                                         
+      CVSS Score     : 6.2                                          
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N 
+    
+
+   0C     0H     1M     0L  org.apache.commons/commons-lang3 3.14.0
+pkg:maven/org.apache.commons/commons-lang3@3.14.0
+
+    x MEDIUM CVE-2025-48924 [Uncontrolled Recursion]
+      https://scout.docker.com/v/CVE-2025-48924?s=github&n=commons-lang3&ns=org.apache.commons&t=maven&vr=%3E%3D3.0%2C%3C3.18.0
+      Affected range : >=3.0                                        
+                     : <3.18.0                                      
+      Fixed version  : 3.18.0                                       
+      CVSS Score     : 6.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
+   0C     0H     1M     0L  com.fasterxml.jackson.core/jackson-core 2.17.0
+pkg:maven/com.fasterxml.jackson.core/jackson-core@2.17.0
+
+    x MEDIUM GHSA-72hv-8253-57qq [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/GHSA-72hv-8253-57qq?s=github&n=jackson-core&ns=com.fasterxml.jackson.core&t=maven&vr=%3E%3D2.0.0%2C%3C%3D2.18.5
+      Affected range : >=2.0.0                                                         
+                     : <=2.18.5                                                        
+      Fixed version  : 2.18.6                                                          
+      CVSS Score     : 6.9                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N 
+    
+
+   0C     0H     1M     0L  org.bouncycastle/bcpkix-fips 2.0.7
+pkg:maven/org.bouncycastle/bcpkix-fips@2.0.7
+
+    x MEDIUM CVE-2025-8916 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2025-8916?s=github&n=bcpkix-fips&ns=org.bouncycastle&t=maven&vr=%3E%3D2.0.0%2C%3C%3D2.0.7
+      Affected range : >=2.0.0                                                                              
+                     : <=2.0.7                                                                              
+      Fixed version  : 2.0.8                                                                                
+      CVSS Score     : 6.3                                                                                  
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/S:P/R:U/RE:M/U:Amber 
+    
+
+   0C     0H     0M     1L  commons-configuration/commons-configuration 1.10
+pkg:maven/commons-configuration/commons-configuration@1.10
+
+    x LOW CVE-2025-46392 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2025-46392?s=github&n=commons-configuration&ns=commons-configuration&t=maven&vr=%3C%3D1.10
+      Affected range : <=1.10                                                              
+      Fixed version  : not fixed                                                           
+      CVSS Score     : 2.7                                                                 
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:U 
+    
+
+   0C     0H     0M     1L  io.netty/netty-handler-proxy 4.1.132.Final
+pkg:maven/io.netty/netty-handler-proxy@4.1.132.Final
+
+    x LOW CVE-2026-42578 [Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Request/Response Splitting')]
+      https://scout.docker.com/v/CVE-2026-42578?s=github&n=netty-handler-proxy&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
+      Affected range : <=4.1.132.Final                                                     
+      Fixed version  : 4.1.133.Final                                                       
+      CVSS Score     : 2.9                                                                 
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P 
+    
+
+
+64 vulnerabilities found in 30 packages
+  CRITICAL  1  
+  HIGH      17 
+  MEDIUM    39 
+  LOW       7  
+
+

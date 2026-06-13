@@ -10,13 +10,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.447560187Z"
+      "timestamp": "2026-06-13T12:02:25.477936759Z"
     },
     {
       "vulnerability": {
@@ -24,13 +29,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common@2.31"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.482039928Z"
+      "timestamp": "2026-06-13T12:02:25.612888275Z"
     },
     {
       "vulnerability": {
@@ -38,13 +48,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.515427408Z"
+      "timestamp": "2026-06-13T12:02:25.756937881Z"
     },
     {
       "vulnerability": {
@@ -52,13 +67,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.546897602Z"
+      "timestamp": "2026-06-13T12:02:25.892178614Z"
     },
     {
       "vulnerability": {
@@ -66,13 +86,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.579074473Z"
+      "timestamp": "2026-06-13T12:02:26.02480949Z"
     },
     {
       "vulnerability": {
@@ -80,13 +105,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.61114629Z"
+      "timestamp": "2026-06-13T12:02:26.156643752Z"
     },
     {
       "vulnerability": {
@@ -94,13 +124,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.642580782Z"
+      "timestamp": "2026-06-13T12:02:26.288345417Z"
     },
     {
       "vulnerability": {
@@ -108,13 +143,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.derby/derby@10.14.2.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.67572063Z"
+      "timestamp": "2026-06-13T12:02:26.423268869Z"
     },
     {
       "vulnerability": {
@@ -122,13 +162,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.70746691Z"
+      "timestamp": "2026-06-13T12:02:26.558549743Z"
     },
     {
       "vulnerability": {
@@ -136,13 +181,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.738953296Z"
+      "timestamp": "2026-06-13T12:02:26.697496239Z"
     },
     {
       "vulnerability": {
@@ -150,13 +200,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.772458732Z"
+      "timestamp": "2026-06-13T12:02:26.845977856Z"
     },
     {
       "vulnerability": {
@@ -164,13 +219,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.806344705Z"
+      "timestamp": "2026-06-13T12:02:26.981026865Z"
     },
     {
       "vulnerability": {
@@ -178,13 +238,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.839156806Z"
+      "timestamp": "2026-06-13T12:02:27.115125822Z"
     },
     {
       "vulnerability": {
@@ -192,13 +257,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.871784929Z"
+      "timestamp": "2026-06-13T12:02:27.249529611Z"
     },
     {
       "vulnerability": {
@@ -206,13 +276,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.904390904Z"
+      "timestamp": "2026-06-13T12:02:27.383113687Z"
     },
     {
       "vulnerability": {
@@ -220,13 +295,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.933889622Z"
+      "timestamp": "2026-06-13T12:02:27.514674799Z"
     },
     {
       "vulnerability": {
@@ -234,13 +314,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-expression@5.3.33"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.966535062Z"
+      "timestamp": "2026-06-13T12:02:27.64968015Z"
     },
     {
       "vulnerability": {
@@ -248,13 +333,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-context@5.3.33"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:51.998530469Z"
+      "timestamp": "2026-06-13T12:02:27.784951645Z"
     },
     {
       "vulnerability": {
@@ -262,13 +352,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-io/commons-io@2.8.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.02958454Z"
+      "timestamp": "2026-06-13T12:02:27.916730458Z"
     },
     {
       "vulnerability": {
@@ -276,13 +371,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.061706402Z"
+      "timestamp": "2026-06-13T12:02:28.05223557Z"
     },
     {
       "vulnerability": {
@@ -290,13 +390,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.094618824Z"
+      "timestamp": "2026-06-13T12:02:28.184802264Z"
     },
     {
       "vulnerability": {
@@ -304,13 +409,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.127376155Z"
+      "timestamp": "2026-06-13T12:02:28.316827062Z"
     },
     {
       "vulnerability": {
@@ -318,13 +428,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-context@5.3.33"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.159319464Z"
+      "timestamp": "2026-06-13T12:02:28.45078516Z"
     },
     {
       "vulnerability": {
@@ -332,13 +447,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-core@5.3.33"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.189809634Z"
+      "timestamp": "2026-06-13T12:02:28.587302045Z"
     },
     {
       "vulnerability": {
@@ -346,13 +466,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-configuration/commons-configuration@1.10"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.221520772Z"
+      "timestamp": "2026-06-13T12:02:28.724185541Z"
     },
     {
       "vulnerability": {
@@ -360,13 +485,24 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-lang/commons-lang@2.4"
+            },
+            {
+              "@id": "pkg:maven/commons-lang/commons-lang@2.6"
+            },
+            {
+              "@id": "pkg:maven/org.apache.commons/commons-lang3@3.14.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.254714794Z"
+      "timestamp": "2026-06-13T12:02:28.868133558Z"
     },
     {
       "vulnerability": {
@@ -374,13 +510,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-fileupload/commons-fileupload@1.5"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.286339076Z"
+      "timestamp": "2026-06-13T12:02:29.001416483Z"
     },
     {
       "vulnerability": {
@@ -388,13 +529,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.319637857Z"
+      "timestamp": "2026-06-13T12:02:29.12905383Z"
     },
     {
       "vulnerability": {
@@ -402,13 +548,21 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.35177593Z"
+      "timestamp": "2026-06-13T12:02:29.25671815Z"
     },
     {
       "vulnerability": {
@@ -416,13 +570,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bc-fips@2.0.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.383006567Z"
+      "timestamp": "2026-06-13T12:02:29.385596654Z"
     },
     {
       "vulnerability": {
@@ -430,13 +589,21 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-fips@2.0.7"
+            },
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.414207759Z"
+      "timestamp": "2026-06-13T12:02:29.513805352Z"
     },
     {
       "vulnerability": {
@@ -444,13 +611,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.446199142Z"
+      "timestamp": "2026-06-13T12:02:29.64848667Z"
     },
     {
       "vulnerability": {
@@ -458,13 +630,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib@v1.25.10"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.479618361Z"
+      "timestamp": "2026-06-13T12:02:29.775613982Z"
     },
     {
       "vulnerability": {
@@ -472,13 +649,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.511679019Z"
+      "timestamp": "2026-06-13T12:02:29.902313868Z"
     },
     {
       "vulnerability": {
@@ -486,13 +668,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.543270181Z"
+      "timestamp": "2026-06-13T12:02:30.029666124Z"
     },
     {
       "vulnerability": {
@@ -500,13 +687,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.574594193Z"
+      "timestamp": "2026-06-13T12:02:30.157452187Z"
     },
     {
       "vulnerability": {
@@ -514,13 +706,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json@2.25.3"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.606355021Z"
+      "timestamp": "2026-06-13T12:02:30.287242383Z"
     },
     {
       "vulnerability": {
@@ -528,13 +725,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.638092067Z"
+      "timestamp": "2026-06-13T12:02:30.417348841Z"
     },
     {
       "vulnerability": {
@@ -542,13 +744,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib@v1.25.10"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.669940455Z"
+      "timestamp": "2026-06-13T12:02:30.548625122Z"
     },
     {
       "vulnerability": {
@@ -556,13 +763,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib@v1.25.10"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.702206316Z"
+      "timestamp": "2026-06-13T12:02:30.67793498Z"
     },
     {
       "vulnerability": {
@@ -570,13 +782,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler-proxy@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.736202076Z"
+      "timestamp": "2026-06-13T12:02:30.807805961Z"
     },
     {
       "vulnerability": {
@@ -584,13 +801,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.768220942Z"
+      "timestamp": "2026-06-13T12:02:30.936597685Z"
     },
     {
       "vulnerability": {
@@ -598,13 +820,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.799737774Z"
+      "timestamp": "2026-06-13T12:02:31.064479844Z"
     },
     {
       "vulnerability": {
@@ -612,13 +839,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.829471576Z"
+      "timestamp": "2026-06-13T12:02:31.191106356Z"
     },
     {
       "vulnerability": {
@@ -626,13 +858,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.862425695Z"
+      "timestamp": "2026-06-13T12:02:31.317005205Z"
     },
     {
       "vulnerability": {
@@ -640,13 +877,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.909178179Z"
+      "timestamp": "2026-06-13T12:02:31.445181793Z"
     },
     {
       "vulnerability": {
@@ -654,13 +896,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.945483471Z"
+      "timestamp": "2026-06-13T12:02:31.572210109Z"
     },
     {
       "vulnerability": {
@@ -668,13 +915,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:52.980658159Z"
+      "timestamp": "2026-06-13T12:02:31.701949586Z"
     },
     {
       "vulnerability": {
@@ -682,13 +934,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler@4.1.132.Final"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:53.013107124Z"
+      "timestamp": "2026-06-13T12:02:31.830934398Z"
     },
     {
       "vulnerability": {
@@ -696,13 +953,18 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:53.044779437Z"
+      "timestamp": "2026-06-13T12:02:31.960152349Z"
     },
     {
       "vulnerability": {
@@ -710,14 +972,25 @@
       },
       "products": [
         {
-          "@id": "pkg:oci/pingaccess@sha256:51689e8ccf1ec6bef28c855a2f2fafdd3556f753609adad2e258580e3bc9397c"
+          "@id": "pkg:oci/pingidentity/pingaccess@sha256:01e8aaf19f70857ae6b585c72750bf38c7bcc32e007a044549272346981efbd5",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1"
+            },
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.17.0"
+            }
+          ]
         }
       ],
       "status": "not_affected",
       "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
       "justification": "vulnerable_code_not_in_execute_path",
-      "timestamp": "2026-06-13T04:11:53.076799222Z"
+      "timestamp": "2026-06-13T12:02:32.086882583Z"
     }
   ],
-  "timestamp": "2026-06-13T04:11:53Z"
+  "timestamp": "2026-06-13T12:02:32Z"
 }
