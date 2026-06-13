@@ -65,13 +65,16 @@ step 2 "Build toolchain image (trivy + vexctl + Docker Scout)"
 docker build -t vex-toolchain:latest toolchain/
 docker run --rm vex-toolchain:latest trivy --version | head -1
 docker run --rm vex-toolchain:latest vexctl version 2>&1 | grep GitVersion
-docker run --rm "${SOCK[@]}" vex-toolchain:latest docker scout version 2>&1 | head -3 || \
-  printf '%s[NOTE] docker scout version failed — Scout commands will run on the host instead.\n        Install Scout: https://docs.docker.com/scout/install/%s\n' "$YELLOW" "$RESET"
+if docker run --rm "${SOCK[@]}" vex-toolchain:latest docker scout version >/dev/null 2>&1; then
+  ok "Docker Scout plugin verified in toolchain container"
+else
+  printf '%s[NOTE] docker scout not found in toolchain container — rebuild: docker build -t vex-toolchain:latest toolchain/%s\n' "$YELLOW" "$RESET"
+fi
 ok "vex-toolchain:latest built"
 # Check containerd image store — required for Scout attestations (steps 9-11).
 # If not active those steps are skipped automatically; all other steps continue.
 printf '  Checking containerd image store... '
-if docker info 2>/dev/null | grep -q "containerd-snapshotter: true"; then
+if docker info 2>/dev/null | grep -qE "io\.containerd\.snapshotter|containerd.?snapshotter.*true"; then
   CONTAINERD_ACTIVE=1
   printf '%sactive%s\n' "$GREEN" "$RESET"
 else
