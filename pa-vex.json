@@ -1,0 +1,3925 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://scout.docker.com/public/vex-3ed4a388bbbdc5df117a6361abff96754d38ae21accb5983817d2c2f950b6400",
+  "author": "Docker Scout \u003cscout@docker.com\u003e",
+  "role": "Document Creator",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": {
+        "name": "CVE-2020-36518"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2020-36518"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2020-36518"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-28168"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common@2.31"
+        },
+        {
+          "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-28168"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common@2.31"
+        },
+        {
+          "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-28168"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common@2.31"
+        },
+        {
+          "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.glassfish.jersey.core/jersey-common"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-34428"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-34428"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-34428"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-46877"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-46877"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2021-46877"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-2047"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-2047"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-2047"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42003"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42003"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42003"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42004"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42004"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-42004"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-databind"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-46337"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.derby/derby@10.14.2.0"
+        },
+        {
+          "@id": "pkg:maven/org.apache.derby/derby"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.derby/derby"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-46337"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.derby/derby@10.14.2.0"
+        },
+        {
+          "@id": "pkg:maven/org.apache.derby/derby"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.derby/derby"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2022-46337"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.derby/derby@10.14.2.0"
+        },
+        {
+          "@id": "pkg:maven/org.apache.derby/derby"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.derby/derby"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26048"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26048"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26048"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26049"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26049"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-26049"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-33201"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-33201"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-33201"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-40167"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-40167"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-40167"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-13009"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-13009"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-13009"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-29857"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-29857"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-29857"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-30171"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-30171"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-30171"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-34447"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-34447"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-34447"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcprov-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38808"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-expression@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-expression"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-expression"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38808"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-expression@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-expression"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-expression"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38808"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-expression@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-expression"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-expression"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38820"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-context@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-context"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-context"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38820"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-context@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-context"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-context"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-38820"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-context@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-context"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-context"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-47554"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-io/commons-io@2.8.0"
+        },
+        {
+          "@id": "pkg:maven/commons-io/commons-io"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-io/commons-io"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-47554"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-io/commons-io@2.8.0"
+        },
+        {
+          "@id": "pkg:maven/commons-io/commons-io"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-io/commons-io"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-47554"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-io/commons-io@2.8.0"
+        },
+        {
+          "@id": "pkg:maven/commons-io/commons-io"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-io/commons-io"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-6763"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-6763"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-6763"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-8184"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-8184"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2024-8184"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-server"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-11143"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-11143"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-11143"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-22233"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-context@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-context"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-context"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-22233"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-context@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-context"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-context"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-22233"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-context@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-context"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-context"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-41249"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-core@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-41249"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-core@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-41249"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.springframework/spring-core@5.3.33"
+        },
+        {
+          "@id": "pkg:maven/org.springframework/spring-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.springframework/spring-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-46392"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-configuration/commons-configuration@1.10"
+        },
+        {
+          "@id": "pkg:maven/commons-configuration/commons-configuration"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-configuration/commons-configuration"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-46392"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-configuration/commons-configuration@1.10"
+        },
+        {
+          "@id": "pkg:maven/commons-configuration/commons-configuration"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-configuration/commons-configuration"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-46392"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-configuration/commons-configuration@1.10"
+        },
+        {
+          "@id": "pkg:maven/commons-configuration/commons-configuration"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-configuration/commons-configuration"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48924"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-lang/commons-lang@2.4"
+        },
+        {
+          "@id": "pkg:maven/commons-lang/commons-lang@2.6"
+        },
+        {
+          "@id": "pkg:maven/org.apache.commons/commons-lang3@3.14.0"
+        },
+        {
+          "@id": "pkg:maven/commons-lang/commons-lang"
+        },
+        {
+          "@id": "pkg:maven/org.apache.commons/commons-lang3"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-lang/commons-lang"
+            },
+            {
+              "@id": "pkg:maven/org.apache.commons/commons-lang3"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48924"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-lang/commons-lang@2.4"
+        },
+        {
+          "@id": "pkg:maven/commons-lang/commons-lang@2.6"
+        },
+        {
+          "@id": "pkg:maven/org.apache.commons/commons-lang3@3.14.0"
+        },
+        {
+          "@id": "pkg:maven/commons-lang/commons-lang"
+        },
+        {
+          "@id": "pkg:maven/org.apache.commons/commons-lang3"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-lang/commons-lang"
+            },
+            {
+              "@id": "pkg:maven/org.apache.commons/commons-lang3"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48924"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-lang/commons-lang@2.4"
+        },
+        {
+          "@id": "pkg:maven/commons-lang/commons-lang@2.6"
+        },
+        {
+          "@id": "pkg:maven/org.apache.commons/commons-lang3@3.14.0"
+        },
+        {
+          "@id": "pkg:maven/commons-lang/commons-lang"
+        },
+        {
+          "@id": "pkg:maven/org.apache.commons/commons-lang3"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-lang/commons-lang"
+            },
+            {
+              "@id": "pkg:maven/org.apache.commons/commons-lang3"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48976"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-fileupload/commons-fileupload@1.5"
+        },
+        {
+          "@id": "pkg:maven/commons-fileupload/commons-fileupload"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-fileupload/commons-fileupload"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48976"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-fileupload/commons-fileupload@1.5"
+        },
+        {
+          "@id": "pkg:maven/commons-fileupload/commons-fileupload"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-fileupload/commons-fileupload"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-48976"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/commons-fileupload/commons-fileupload@1.5"
+        },
+        {
+          "@id": "pkg:maven/commons-fileupload/commons-fileupload"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/commons-fileupload/commons-fileupload"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-49128"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-49128"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-49128"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-52999"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-52999"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-52999"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8885"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bc-fips@2.0.0"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bc-fips"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bc-fips"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8885"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bc-fips@2.0.0"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bc-fips"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bc-fips"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8885"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bc-fips@2.0.0"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bc-fips"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bc-fips"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8916"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-fips@2.0.7"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-fips"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-fips"
+            },
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8916"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-fips@2.0.7"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-fips"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-fips"
+            },
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2025-8916"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-fips@2.0.7"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-fips"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-fips"
+            },
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-2332"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-2332"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-2332"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http@9.4.39.v20210325"
+        },
+        {
+          "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.eclipse.jetty/jetty-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-27145"
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/stdlib@v1.25.10"
+        },
+        {
+          "@id": "pkg:golang/stdlib"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-27145"
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/stdlib@v1.25.10"
+        },
+        {
+          "@id": "pkg:golang/stdlib"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-27145"
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/stdlib@v1.25.10"
+        },
+        {
+          "@id": "pkg:golang/stdlib"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34477"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34477"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34477"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34478"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34478"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34478"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34480"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34480"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34480"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34481"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34481"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-34481"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json@2.25.3"
+        },
+        {
+          "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.apache.logging.log4j/log4j-layout-template-json"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41417"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41417"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-41417"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42504"
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/stdlib@v1.25.10"
+        },
+        {
+          "@id": "pkg:golang/stdlib"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42504"
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/stdlib@v1.25.10"
+        },
+        {
+          "@id": "pkg:golang/stdlib"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42504"
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/stdlib@v1.25.10"
+        },
+        {
+          "@id": "pkg:golang/stdlib"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42507"
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/stdlib@v1.25.10"
+        },
+        {
+          "@id": "pkg:golang/stdlib"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42507"
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/stdlib@v1.25.10"
+        },
+        {
+          "@id": "pkg:golang/stdlib"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42507"
+      },
+      "products": [
+        {
+          "@id": "pkg:golang/stdlib@v1.25.10"
+        },
+        {
+          "@id": "pkg:golang/stdlib"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:golang/stdlib"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42578"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-handler-proxy@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-handler-proxy"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler-proxy"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42578"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-handler-proxy@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-handler-proxy"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler-proxy"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42578"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-handler-proxy@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-handler-proxy"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler-proxy"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42580"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42580"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42580"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42581"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42581"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42581"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42583"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42583"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42583"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42584"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42584"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42584"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42585"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42585"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42585"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42587"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42587"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-42587"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-codec-http"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-codec-http"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-44249"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-handler@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-handler"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-44249"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-handler@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-handler"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-44249"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-handler@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-handler"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-45416"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-handler@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-handler"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-45416"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-handler@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-handler"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-45416"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/io.netty/netty-handler@4.1.132.Final"
+        },
+        {
+          "@id": "pkg:maven/io.netty/netty-handler"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/io.netty/netty-handler"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-5588"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-5588"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2026-5588"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70"
+        },
+        {
+          "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/org.bouncycastle/bcpkix-jdk15on"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "GHSA-72hv-8253-57qq"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.17.0"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "GHSA-72hv-8253-57qq"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.17.0"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    },
+    {
+      "vulnerability": {
+        "name": "GHSA-72hv-8253-57qq"
+      },
+      "products": [
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.11.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.17.0"
+        },
+        {
+          "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+        },
+        {
+          "@id": "darkedges/pingaccess:8.3.4-hi",
+          "subcomponents": [
+            {
+              "@id": "pkg:maven/com.fasterxml.jackson.core/jackson-core"
+            }
+          ]
+        }
+      ],
+      "status": "not_affected",
+      "status_notes": "DEMO assessment generated for a CVE-suppression-workflow POC. This is NOT a real exploitability analysis; do not rely on it for risk decisions.",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "timestamp": "2026-06-14T02:48:24Z"
+    }
+  ],
+  "timestamp": "2026-06-14T03:05:12Z"
+}

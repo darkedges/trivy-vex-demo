@@ -11,6 +11,8 @@ $env:DOCKER_CLI_HINTS = 'false'
 
 $Image   = 'pingidentity/pingaccess:8.3.4-edge'
 $Derived = 'pingaccess-vex:8.3.4-edge-demo'
+$HubImage   = if ($env:HUB_IMAGE) { $env:HUB_IMAGE } else { 'darkedges/pingaccess:8.3.4-hi' }
+$HubProduct = "pkg:docker/$($HubImage -replace ':','@')"
 $Sock  = @('-v', '/var/run/docker.sock:/var/run/docker.sock')
 $Cache = @('-v', 'trivy-cache:/root/.cache/trivy')
 $Work  = @('-v', "${PSScriptRoot}:/work")
@@ -105,12 +107,13 @@ if ($OciDigest) {
     Write-Host '[WARN] Could not detect image digest — generate-vex.sh will use its hardcoded fallback' -ForegroundColor Yellow
     $OciDigest = ''
 }
-docker run --rm -e "PRODUCT_OCI_DIGEST=$OciDigest" @Work vex-toolchain:latest `
-    sh -c "tr -d '\r' < /work/scripts/generate-vex.sh > /tmp/g.sh && sh /tmp/g.sh" | Select-Object -Last 6
+docker run --rm -e "PRODUCT_OCI_DIGEST=$OciDigest" -e "PRODUCT_DOCKER_HUB=$HubProduct" @Work vex-toolchain:latest `
+    sh -c "tr -d '\r' < /work/scripts/generate-vex.sh > /tmp/g.sh && sh /tmp/g.sh" | Select-Object -Last 8
 Assert-LastExit
-Ok 'vex/statements/*.openvex.json         (Trivy/Wiz, pkg:oci)'
-Ok 'vex/statements-scout/*.vex.json      (Scout / Docker Hub, pkg:docker)'
-Ok 'vex/statements-scout-local/*.vex.json (Scout / localhost:5000, pkg:docker)'
+Ok 'vex/statements/*.openvex.json                (Trivy/Wiz, pkg:oci)'
+Ok 'vex/statements-scout/*.vex.json             (Scout / Docker Hub pingidentity, pkg:docker)'
+Ok 'vex/statements-scout-local/*.vex.json        (Scout / localhost:5000, pkg:docker)'
+Ok "vex/statements-scout-darkedges/*.vex.json    (Scout / Docker Hub $HubImage, pkg:docker)"
 Wait-Step
 
 Step 6 'Assemble VEX repository (spec v0.1 archive)'
@@ -149,9 +152,11 @@ if (-not $containerdActive) {
     } else {
         # Mutex rule (Gotcha 5 + 10): if the image has ANY attestation (provenance, SBOM),
         # Scout ignores ALL external VEX sources — both --vex-location and filesystem VEX.
-        # pingidentity/pingaccess:8.3.4-edge is a modern Docker Hub image built with BuildKit
-        # and almost certainly carries provenance + SBOM attestations.
-        # The correct suppression channel for this image is the attestation path: Steps 10-11.
+        # pingidentity/pingaccess:8.3.4-edge has NO attestations (confirmed via
+        # docker scout attestation list), so the mutex rule is not triggered here.
+        # Suppression via --vex-location still does not work for this image due to
+        # Scout <=1.20.0 behaviour (Gotcha 11). The attestation path (Steps 10-11) is
+        # the only confirmed working Scout suppression mechanism.
         Write-Host ("  Checking {0} for attestations..." -f $Image) -ForegroundColor White
         $origAttest = docker scout attestation list $Image 2>&1
         $origAttest | Select-String -Pattern 'SBOM|Provenance|openvex|predicate|No attestation' -CaseSensitive:$false `
@@ -284,7 +289,7 @@ if (-not $containerdActive) {
         docker scout cves $ScoutImage 2>&1 | Tee-Object -FilePath $scoutReport
     } else {
         Write-Host '  No attestations in registry — using --vex-location with localhost:5000 PURL files.' -ForegroundColor Yellow
-        docker scout cves $ScoutImage --vex-location "$PSScriptRoot\vex" 2>&1 | Tee-Object -FilePath $scoutReport
+        docker scout cves $ScoutImage --vex-location "$PSScriptRoot\vex\pingaccess-scout-local.vex.json" 2>&1 | Tee-Object -FilePath $scoutReport
     }
     Ok 'scout-suppressed-report.txt saved'
     $remaining = @(Get-Content $scoutReport | Select-String '^\s*CVE-').Count
@@ -293,7 +298,32 @@ if (-not $containerdActive) {
 }
 Wait-Step
 
-Step 12 'Build derived image with embedded VEX (filesystem fallback — see README)'
+Step 12 'Scout Phase 5d — attach VEX attestations to Docker Hub image (optional)'
+# Attaches the Phase 3d VEX set (pkg:docker/<org>/... PURL) to the Docker Hub image
+# so scout.docker.com indexes the suppression. Requires HubImage to be published on
+# Docker Hub; skips gracefully if not accessible or statements not yet generated.
+$VexHubFile = Join-Path $PSScriptRoot 'vex\pingaccess-scout-darkedges.vex.json'
+Write-Host "  Target : $HubImage" -ForegroundColor White
+Write-Host "  Product: $HubProduct" -ForegroundColor White
+if (-not (Test-Path $VexHubFile)) {
+    Write-Host "  [SKIP] $VexHubFile not found — re-run Step 5 first." -ForegroundColor Yellow
+} else {
+    docker scout attestation add `
+        --file $VexHubFile `
+        --predicate-type https://openvex.dev/ns/v0.2.0 `
+        $HubImage 2>&1
+    if ($LASTEXITCODE -eq 0) {
+        Ok "$HubImage — consolidated VEX attestation attached"
+        Write-Host '  scout.docker.com will re-index the image within a few minutes.' -ForegroundColor White
+        Write-Host "  To verify: docker scout cves $HubImage" -ForegroundColor White
+    } else {
+        Write-Host "  [SKIP] Attestation add failed — is $HubImage published on Docker Hub and logged in?" -ForegroundColor Yellow
+        Write-Host "  Publish: docker tag $Image $HubImage; docker push $HubImage" -ForegroundColor White
+    }
+}
+Wait-Step
+
+Step 13 'Build derived image with embedded VEX (filesystem fallback — see README)'
 # IMPORTANT: mutual-exclusivity rule — if the image has ANY attestation (including
 # provenance auto-added by BuildKit), Scout ignores filesystem VEX entirely and reads
 # only attestations. Build with --provenance=false --sbom=false to use filesystem embed.
@@ -302,7 +332,7 @@ docker image inspect $Derived --format 'RepoDigests={{json .RepoDigests}} (empty
 Ok "$Derived built"
 Wait-Step
 
-Step 13 'Trivy suppression proof on the digest-pinned ORIGINAL image'
+Step 14 'Trivy suppression proof on the digest-pinned ORIGINAL image'
 docker run --rm @Sock @Cache @Work vex-toolchain:latest `
     trivy image --quiet --skip-db-update --format json --show-suppressed `
     --vex /work/vex/pingaccess-8.3.4-edge.openvex.json `
@@ -319,7 +349,7 @@ Show-Results 'rescan-original-repo.json' 'b) --vex repo (original image)'
 Ok 'expected: 0 remaining findings, 70 suppressed for both'
 Wait-Step
 
-Step 14 'Trivy re-scan of the DERIVED image three ways (expected: no suppression)'
+Step 15 'Trivy re-scan of the DERIVED image three ways (expected: no suppression)'
 docker run --rm @Sock @Cache @Work vex-toolchain:latest `
     trivy image --quiet --skip-db-update --format json --show-suppressed `
     --vex /work/vex/pingaccess-8.3.4-edge.openvex.json `
@@ -337,7 +367,7 @@ Write-Host 'No suppression: VEX binds to the base digest; local derived images h
 Write-Host 'and Trivy does not read in-image VEX files.' -ForegroundColor Yellow
 Wait-Step
 
-Step 15 'Summary'
+Step 16 'Summary'
 Write-Host '----------------------------------------------' -ForegroundColor White
 Write-Host "baseline     : $(Get-Counts 'baseline-report.json')"
 Write-Host "trivy --vex  : $(Get-Counts 'suppressed-report.json')"

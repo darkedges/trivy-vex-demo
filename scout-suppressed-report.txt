@@ -1,9 +1,9 @@
+    i New version 1.21.0 available (installed version is 1.20.0) at https://github.com/docker/scout-cli
     ...Storing image for indexing
     v Image stored for indexing
     ...Indexing
     v Indexed 293 packages
-    ! failed to delete temporary image archive C:\WINDOWS\TEMP\docker-scout\sha256\4cfe8eaef4c851f987f5a1f9edfca512e6316cc18b30b5e0123a6615cb1dc334\ceec4bb1-1287-401b-9c20-6708d4f7dfb0: unlinkat C:\WINDOWS\TEMP\docker-scout\sha256\4cfe8eaef4c851f987f5a1f9edfca512e6316cc18b30b5e0123a6615cb1dc334\ceec4bb1-1287-401b-9c20-6708d4f7dfb0: The process cannot access the file because it is being used by another process.    v Loaded 3 VEX documents
-    x Detected 30 vulnerable packages with a total of 53 vulnerabilities
+    ! failed to delete temporary image archive C:\WINDOWS\TEMP\docker-scout\sha256\548b215868e9b9d7b81cac498c74b11c0b48e82329b68c3d6126991426ab8f95\3ad7e7a7-1364-461e-a897-577acf66ce73: unlinkat C:\WINDOWS\TEMP\docker-scout\sha256\548b215868e9b9d7b81cac498c74b11c0b48e82329b68c3d6126991426ab8f95\3ad7e7a7-1364-461e-a897-577acf66ce73: The process cannot access the file because it is being used by another process.    x Detected 30 vulnerable packages with a total of 53 vulnerabilities
 
 
 ## Overview
@@ -11,7 +11,7 @@
                    Γöé                   Analyzed Image                    
 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓö╝ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
  Target            Γöé  localhost:5000/pingidentity/pingaccess:8.3.4-edge  
-   digest          Γöé  4cfe8eaef4c8                                       
+   digest          Γöé  548b215868e9                                       
    platform        Γöé linux/amd64                                         
    vulnerabilities Γöé    1C    17H    39M     7L                          
    size            Γöé 269 MB                                              
@@ -269,25 +269,6 @@ pkg:golang/stdlib@1.25.10
       Fixed version  : 1.25.11  
     
 
-   0C     1H     1M     0L  org.springframework/spring-core 5.3.33
-pkg:maven/org.springframework/spring-core@5.3.33
-
-    x HIGH CVE-2025-41249 [Improper Authorization]
-      https://scout.docker.com/v/CVE-2025-41249?s=github&n=spring-core&ns=org.springframework&t=maven&vr=%3E%3D5.3.0%2C%3C%3D5.3.44
-      Affected range : >=5.3.0                                      
-                     : <=5.3.44                                     
-      Fixed version  : not fixed                                    
-      CVSS Score     : 7.5                                          
-      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N 
-    
-    x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
-      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-core&ns=org.springframework&t=maven&vr=%3C6.1.14
-      Affected range : <6.1.14                                      
-      Fixed version  : 6.1.14                                       
-      CVSS Score     : 4.8                                          
-      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
-    
-
    0C     1H     1M     0L  com.fasterxml.jackson.core/jackson-core 2.13.1
 pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1
 
@@ -307,15 +288,23 @@ pkg:maven/com.fasterxml.jackson.core/jackson-core@2.13.1
       CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N 
     
 
-   0C     1H     0M     0L  io.netty/netty-codec 4.1.132.Final
-pkg:maven/io.netty/netty-codec@4.1.132.Final
+   0C     1H     1M     0L  org.springframework/spring-core 5.3.33
+pkg:maven/org.springframework/spring-core@5.3.33
 
-    x HIGH CVE-2026-42583 [Uncontrolled Resource Consumption]
-      https://scout.docker.com/v/CVE-2026-42583?s=github&n=netty-codec&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
-      Affected range : <=4.1.132.Final                              
-      Fixed version  : 4.1.133.Final                                
+    x HIGH CVE-2025-41249 [Improper Authorization]
+      https://scout.docker.com/v/CVE-2025-41249?s=github&n=spring-core&ns=org.springframework&t=maven&vr=%3E%3D5.3.0%2C%3C%3D5.3.44
+      Affected range : >=5.3.0                                      
+                     : <=5.3.44                                     
+      Fixed version  : not fixed                                    
       CVSS Score     : 7.5                                          
-      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N 
+    
+    x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-core&ns=org.springframework&t=maven&vr=%3C6.1.14
+      Affected range : <6.1.14                                      
+      Fixed version  : 6.1.14                                       
+      CVSS Score     : 4.8                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
     
 
    0C     1H     0M     0L  commons-io/commons-io 2.8.0
@@ -340,6 +329,17 @@ pkg:maven/commons-fileupload/commons-fileupload@1.5
       Fixed version  : 1.6.0                                                           
       CVSS Score     : 8.7                                                             
       CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N 
+    
+
+   0C     1H     0M     0L  io.netty/netty-codec 4.1.132.Final
+pkg:maven/io.netty/netty-codec@4.1.132.Final
+
+    x HIGH CVE-2026-42583 [Uncontrolled Resource Consumption]
+      https://scout.docker.com/v/CVE-2026-42583?s=github&n=netty-codec&ns=io.netty&t=maven&vr=%3C%3D4.1.132.Final
+      Affected range : <=4.1.132.Final                              
+      Fixed version  : 4.1.133.Final                                
+      CVSS Score     : 7.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H 
     
 
    0C     0H     5M     0L  org.bouncycastle/bcprov-jdk15on 1.70
@@ -436,24 +436,6 @@ pkg:maven/org.springframework/spring-context@5.3.33
       CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N 
     
 
-   0C     0H     2M     0L  org.springframework/spring-expression 5.3.33
-pkg:maven/org.springframework/spring-expression@5.3.33
-
-    x MEDIUM CVE-2024-38808 [Allocation of Resources Without Limits or Throttling]
-      https://scout.docker.com/v/CVE-2024-38808?s=github&n=spring-expression&ns=org.springframework&t=maven&vr=%3C5.3.39
-      Affected range : <5.3.39                                                         
-      Fixed version  : 5.3.39                                                          
-      CVSS Score     : 5.1                                                             
-      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N 
-    
-    x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
-      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-expression&ns=org.springframework&t=maven&vr=%3C6.1.14
-      Affected range : <6.1.14                                      
-      Fixed version  : 6.1.14                                       
-      CVSS Score     : 4.8                                          
-      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
-    
-
    0C     0H     2M     0L  org.bouncycastle/bcpkix-jdk15on 1.70
 pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70
 
@@ -474,50 +456,34 @@ pkg:maven/org.bouncycastle/bcpkix-jdk15on@1.70
       CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/S:P/R:U/RE:M/U:Amber 
     
 
-   0C     0H     1M     0L  org.springframework/spring-jdbc 5.3.33
-pkg:maven/org.springframework/spring-jdbc@5.3.33
+   0C     0H     2M     0L  org.springframework/spring-expression 5.3.33
+pkg:maven/org.springframework/spring-expression@5.3.33
 
+    x MEDIUM CVE-2024-38808 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2024-38808?s=github&n=spring-expression&ns=org.springframework&t=maven&vr=%3C5.3.39
+      Affected range : <5.3.39                                                         
+      Fixed version  : 5.3.39                                                          
+      CVSS Score     : 5.1                                                             
+      CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N 
+    
     x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
-      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-jdbc&ns=org.springframework&t=maven&vr=%3C6.1.14
+      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-expression&ns=org.springframework&t=maven&vr=%3C6.1.14
       Affected range : <6.1.14                                      
       Fixed version  : 6.1.14                                       
       CVSS Score     : 4.8                                          
       CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
     
 
-   0C     0H     1M     0L  commons-lang/commons-lang 2.6
-pkg:maven/commons-lang/commons-lang@2.6
+   0C     0H     1M     0L  org.bouncycastle/bcpkix-fips 2.0.7
+pkg:maven/org.bouncycastle/bcpkix-fips@2.0.7
 
-    x MEDIUM CVE-2025-48924 [Uncontrolled Recursion]
-      https://scout.docker.com/v/CVE-2025-48924?s=github&n=commons-lang&ns=commons-lang&t=maven&vr=%3E%3D2.0%2C%3C%3D2.6
-      Affected range : >=2.0                                        
-                     : <=2.6                                        
-      Fixed version  : not fixed                                    
-      CVSS Score     : 6.5                                          
-      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
-    
-
-   0C     0H     1M     0L  org.bouncycastle/bc-fips 2.0.0
-pkg:maven/org.bouncycastle/bc-fips@2.0.0
-
-    x MEDIUM CVE-2025-8885 [Allocation of Resources Without Limits or Throttling]
-      https://scout.docker.com/v/CVE-2025-8885?s=github&n=bc-fips&ns=org.bouncycastle&t=maven&vr=%3D2.0.0
-      Affected range : =2.0.0                                                                               
-      Fixed version  : 2.1.0                                                                                
+    x MEDIUM CVE-2025-8916 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2025-8916?s=github&n=bcpkix-fips&ns=org.bouncycastle&t=maven&vr=%3E%3D2.0.0%2C%3C%3D2.0.7
+      Affected range : >=2.0.0                                                                              
+                     : <=2.0.7                                                                              
+      Fixed version  : 2.0.8                                                                                
       CVSS Score     : 6.3                                                                                  
       CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/S:P/R:U/RE:M/U:Amber 
-    
-
-   0C     0H     1M     0L  commons-lang/commons-lang 2.4
-pkg:maven/commons-lang/commons-lang@2.4
-
-    x MEDIUM CVE-2025-48924 [Uncontrolled Recursion]
-      https://scout.docker.com/v/CVE-2025-48924?s=github&n=commons-lang&ns=commons-lang&t=maven&vr=%3E%3D2.0%2C%3C%3D2.6
-      Affected range : >=2.0                                        
-                     : <=2.6                                        
-      Fixed version  : not fixed                                    
-      CVSS Score     : 6.5                                          
-      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
     
 
    0C     0H     1M     0L  org.springframework/spring-beans 5.3.33
@@ -543,6 +509,17 @@ pkg:maven/org.apache.logging.log4j/log4j-layout-template-json@2.25.3
       CVSS Vector    : CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:N/VA:N/SC:N/SI:L/SA:N 
     
 
+   0C     0H     1M     0L  org.springframework/spring-jdbc 5.3.33
+pkg:maven/org.springframework/spring-jdbc@5.3.33
+
+    x MEDIUM CVE-2024-38827 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2024-38827?s=gitlab&n=spring-jdbc&ns=org.springframework&t=maven&vr=%3C6.1.14
+      Affected range : <6.1.14                                      
+      Fixed version  : 6.1.14                                       
+      CVSS Score     : 4.8                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
    0C     0H     1M     0L  org.glassfish.jersey.core/jersey-common 2.31
 pkg:maven/org.glassfish.jersey.core/jersey-common@2.31
 
@@ -553,18 +530,6 @@ pkg:maven/org.glassfish.jersey.core/jersey-common@2.31
       Fixed version  : 2.34                                         
       CVSS Score     : 6.2                                          
       CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N 
-    
-
-   0C     0H     1M     0L  org.apache.commons/commons-lang3 3.14.0
-pkg:maven/org.apache.commons/commons-lang3@3.14.0
-
-    x MEDIUM CVE-2025-48924 [Uncontrolled Recursion]
-      https://scout.docker.com/v/CVE-2025-48924?s=github&n=commons-lang3&ns=org.apache.commons&t=maven&vr=%3E%3D3.0%2C%3C3.18.0
-      Affected range : >=3.0                                        
-                     : <3.18.0                                      
-      Fixed version  : 3.18.0                                       
-      CVSS Score     : 6.5                                          
-      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
     
 
    0C     0H     1M     0L  com.fasterxml.jackson.core/jackson-core 2.17.0
@@ -579,16 +544,51 @@ pkg:maven/com.fasterxml.jackson.core/jackson-core@2.17.0
       CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N 
     
 
-   0C     0H     1M     0L  org.bouncycastle/bcpkix-fips 2.0.7
-pkg:maven/org.bouncycastle/bcpkix-fips@2.0.7
+   0C     0H     1M     0L  commons-lang/commons-lang 2.4
+pkg:maven/commons-lang/commons-lang@2.4
 
-    x MEDIUM CVE-2025-8916 [Allocation of Resources Without Limits or Throttling]
-      https://scout.docker.com/v/CVE-2025-8916?s=github&n=bcpkix-fips&ns=org.bouncycastle&t=maven&vr=%3E%3D2.0.0%2C%3C%3D2.0.7
-      Affected range : >=2.0.0                                                                              
-                     : <=2.0.7                                                                              
-      Fixed version  : 2.0.8                                                                                
+    x MEDIUM CVE-2025-48924 [Uncontrolled Recursion]
+      https://scout.docker.com/v/CVE-2025-48924?s=github&n=commons-lang&ns=commons-lang&t=maven&vr=%3E%3D2.0%2C%3C%3D2.6
+      Affected range : >=2.0                                        
+                     : <=2.6                                        
+      Fixed version  : not fixed                                    
+      CVSS Score     : 6.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
+   0C     0H     1M     0L  commons-lang/commons-lang 2.6
+pkg:maven/commons-lang/commons-lang@2.6
+
+    x MEDIUM CVE-2025-48924 [Uncontrolled Recursion]
+      https://scout.docker.com/v/CVE-2025-48924?s=github&n=commons-lang&ns=commons-lang&t=maven&vr=%3E%3D2.0%2C%3C%3D2.6
+      Affected range : >=2.0                                        
+                     : <=2.6                                        
+      Fixed version  : not fixed                                    
+      CVSS Score     : 6.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
+    
+
+   0C     0H     1M     0L  org.bouncycastle/bc-fips 2.0.0
+pkg:maven/org.bouncycastle/bc-fips@2.0.0
+
+    x MEDIUM CVE-2025-8885 [Allocation of Resources Without Limits or Throttling]
+      https://scout.docker.com/v/CVE-2025-8885?s=github&n=bc-fips&ns=org.bouncycastle&t=maven&vr=%3D2.0.0
+      Affected range : =2.0.0                                                                               
+      Fixed version  : 2.1.0                                                                                
       CVSS Score     : 6.3                                                                                  
       CVSS Vector    : CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/S:P/R:U/RE:M/U:Amber 
+    
+
+   0C     0H     1M     0L  org.apache.commons/commons-lang3 3.14.0
+pkg:maven/org.apache.commons/commons-lang3@3.14.0
+
+    x MEDIUM CVE-2025-48924 [Uncontrolled Recursion]
+      https://scout.docker.com/v/CVE-2025-48924?s=github&n=commons-lang3&ns=org.apache.commons&t=maven&vr=%3E%3D3.0%2C%3C3.18.0
+      Affected range : >=3.0                                        
+                     : <3.18.0                                      
+      Fixed version  : 3.18.0                                       
+      CVSS Score     : 6.5                                          
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N 
     
 
    0C     0H     0M     1L  commons-configuration/commons-configuration 1.10
@@ -614,10 +614,10 @@ pkg:maven/io.netty/netty-handler-proxy@4.1.132.Final
     
 
 
+
 64 vulnerabilities found in 30 packages
   CRITICAL  1  
   HIGH      17 
   MEDIUM    39 
   LOW       7  
-
 

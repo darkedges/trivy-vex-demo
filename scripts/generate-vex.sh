@@ -143,3 +143,38 @@ vexctl merge \
 
 echo "merged -> /work/vex/pingaccess-scout-local.vex.json (Scout / local registry)"
 jq '.statements | length' /work/vex/pingaccess-scout-local.vex.json
+
+# ── Phase 3d: pkg:docker statements for configurable Docker Hub target ────────
+# Generates VEX for a Docker Hub image in a different org/repo from the upstream
+# source. Required because Scout includes the registry hostname in its PURL, so
+# darkedges/pingaccess and pingidentity/pingaccess are distinct products (Gotcha 7).
+# Set PRODUCT_DOCKER_HUB to override the default target; run.sh passes it from
+# the HUB_IMAGE variable at the top of the script.
+PRODUCT_DOCKER_HUB="${PRODUCT_DOCKER_HUB:-pkg:docker/darkedges/pingaccess@8.3.4-hi}"
+OUT_SCOUT_HUB=/work/vex/statements-scout-darkedges
+mkdir -p "$OUT_SCOUT_HUB"
+
+jq -r '[.Results[].Vulnerabilities[]?.VulnerabilityID] | unique | .[]' \
+    /work/baseline-report.json | while read -r VULN; do
+  vexctl create \
+    --product="$PRODUCT_DOCKER_HUB" \
+    --vuln="$VULN" \
+    --status="not_affected" \
+    --justification="vulnerable_code_not_in_execute_path" \
+    --status-note="$NOTE" \
+    --author="$AUTHOR" \
+    --id="https://darkedges.com/vex/demo/pingaccess/scout-darkedges/${VULN}" \
+    --file="$OUT_SCOUT_HUB/${VULN}.vex.json" 2>/dev/null
+  inject_subcomponents "$OUT_SCOUT_HUB/${VULN}.vex.json" "$VULN"
+  echo "created $OUT_SCOUT_HUB/${VULN}.vex.json"
+done
+
+# Consolidated pkg:docker/darkedges document
+vexctl merge \
+  --author="$AUTHOR" \
+  --id="https://darkedges.com/vex/demo/pingaccess/scout-darkedges-consolidated" \
+  "$OUT_SCOUT_HUB"/*.vex.json \
+  | jq . > /work/vex/pingaccess-scout-darkedges.vex.json
+
+echo "merged -> /work/vex/pingaccess-scout-darkedges.vex.json (Scout / Docker Hub ${PRODUCT_DOCKER_HUB})"
+jq '.statements | length' /work/vex/pingaccess-scout-darkedges.vex.json

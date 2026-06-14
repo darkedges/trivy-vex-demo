@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.71.0"
   },
-  "ReportID": "019ec0dc-4aa3-76d9-ac61-dc0e64f0bdf2",
-  "CreatedAt": "2026-06-13T12:02:03.043450148Z",
+  "ReportID": "019ec407-4040-7c1c-a9fe-62018e8eede6",
+  "CreatedAt": "2026-06-14T02:47:50.080795031Z",
   "ArtifactID": "sha256:2029d4cba0326c4e680b245a6a94e674d7cdb5a89acd8304512da2a7342196d4",
   "ArtifactName": "pingidentity/pingaccess:8.3.4-edge",
   "ArtifactType": "container_image",
@@ -5296,15 +5296,17 @@
             "https://bugzilla.redhat.com/show_bug.cgi?id=2373020",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2373309",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2379374",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2379382",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2379386",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48976",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48988",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-48989",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-49125",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-52434",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-52520",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-53506",
             "https://errata.almalinux.org/9/ALSA-2025-14181.html",
-            "https://errata.rockylinux.org/RLSA-2025:14179",
+            "https://errata.rockylinux.org/RLSA-2025:14181",
             "https://github.com/apache/commons-fileupload",
             "https://github.com/apache/commons-fileupload/commit/2108495a4775910b8559f18ed5a779d60542ee96 (commons-fileupload-1.6.0-RC1)",
             "https://github.com/apache/commons-fileupload/commit/b247774a72a044f5d5380ae947140ee80af4e78b",
@@ -6028,7 +6030,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:310edc27bebe8244c19fad952b95b1f044bef2957063fd7563ee43b7e36d7e09",
-          "Title": "Netty is a network application framework for development of protocol s ...",
+          "Title": "netty-handler: netty-handler: IPv6 subnet rule bypass due to incorrect masking operation",
           "Description": "Netty is a network application framework for development of protocol servers and clients. In netty-handler prior to versions 4.1.135.Final and 4.2.15.Final, an attacker can bypass IPv6 subnet rules due to an incorrect masking operation in IpSubnetFilterRule.compareTo(). Valid public IP addresses can bypass the restrictions. Versions 4.1.135.Final and 4.2.15.Final patch the issue.",
           "Severity": "HIGH",
           "CweIDs": [
@@ -6036,19 +6038,27 @@
             "CWE-697"
           ],
           "VendorSeverity": {
-            "ghsa": 3
+            "ghsa": 3,
+            "redhat": 3
           },
           "CVSS": {
             "ghsa": {
               "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
               "V3Score": 8.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
             }
           },
           "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-44249",
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/releases/tag/netty-4.1.135.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.15.Final",
-            "https://github.com/netty/netty/security/advisories/GHSA-3qp7-7mw8-wx86"
+            "https://github.com/netty/netty/security/advisories/GHSA-3qp7-7mw8-wx86",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-44249",
+            "https://www.cve.org/CVERecord?id=CVE-2026-44249"
           ],
           "PublishedDate": "2026-06-11T22:16:56.707Z",
           "LastModifiedDate": "2026-06-12T15:55:06.377Z"
@@ -6079,7 +6089,7 @@
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
           },
           "Fingerprint": "sha256:d88b149ce6fef19fd9772c61d2e74a32a932b9fc643c67218d3f34814567357f",
-          "Title": "Netty: SNI handler pre-allocates up to 16 MiB from nine attacker bytes",
+          "Title": "Netty is a network application framework for development of protocol s ...",
           "Description": "Netty is a network application framework for development of protocol servers and clients. Prior to versions 4.1.135.Final and 4.2.15.Final, SslClientHelloHandler.decode() reads the 24-bit TLS handshake length and, when the ClientHello does not fit in the first record, eagerly allocates `ctx.alloc().buffer(handshakeLength)` (line 161). The guard at line 140 is `handshakeLength \u003e maxClientHelloLength \u0026\u0026 maxClientHelloLength != 0`, and the commonly-used SniHandler/AbstractSniHandler constructors (SniHandler(Mapping), SniHandler(AsyncMapping), AbstractSniHandler()) pass maxClientHelloLength=0 and handshakeTimeoutMillis=0, so the length guard is disabled and no timeout is scheduled. A 16 MiB request exceeds the default pooled chunk size and becomes a huge/unpooled allocation performed immediately. The buffer is retained in the handler until the channel closes. Versions 4.1.135.Final and 4.2.15.Final patch the issue.",
           "Severity": "HIGH",
           "CweIDs": [
@@ -6098,7 +6108,8 @@
             "https://github.com/netty/netty",
             "https://github.com/netty/netty/releases/tag/netty-4.1.135.Final",
             "https://github.com/netty/netty/releases/tag/netty-4.2.15.Final",
-            "https://github.com/netty/netty/security/advisories/GHSA-x4gw-5cx5-pgmh"
+            "https://github.com/netty/netty/security/advisories/GHSA-x4gw-5cx5-pgmh",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-45416"
           ],
           "PublishedDate": "2026-06-12T15:16:26.94Z",
           "LastModifiedDate": "2026-06-12T15:55:06.377Z"

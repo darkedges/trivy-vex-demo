@@ -18,6 +18,8 @@ MAGENTA=$'\033[1;35m'; CYAN=$'\033[1;36m'; BOLD=$'\033[1m'; RESET=$'\033[0m'
 
 IMAGE="pingidentity/pingaccess:8.3.4-edge"
 DERIVED="pingaccess-vex:8.3.4-edge-demo"
+HUB_IMAGE="${HUB_IMAGE:-darkedges/pingaccess:8.3.4-hi}"
+HUB_PRODUCT="pkg:docker/${HUB_IMAGE%:*}@${HUB_IMAGE#*:}"
 SOCK=(-v /var/run/docker.sock:/var/run/docker.sock)
 CACHE=(-v trivy-cache:/root/.cache/trivy)
 WORK=(-v "$SCRIPT_DIR:/work")
@@ -111,11 +113,12 @@ if [ -z "$OCI_DIGEST" ]; then
 else
   printf '  Image digest: %s\n' "$OCI_DIGEST"
 fi
-docker run --rm -e "PRODUCT_OCI_DIGEST=${OCI_DIGEST}" "${WORK[@]}" vex-toolchain:latest \
-  sh -c "tr -d '\r' < /work/scripts/generate-vex.sh > /tmp/g.sh && sh /tmp/g.sh" | tail -6
-ok "vex/statements/*.openvex.json         (Trivy/Wiz, pkg:oci)"
-ok "vex/statements-scout/*.vex.json      (Scout / Docker Hub, pkg:docker)"
-ok "vex/statements-scout-local/*.vex.json (Scout / localhost:5000, pkg:docker)"
+docker run --rm -e "PRODUCT_OCI_DIGEST=${OCI_DIGEST}" -e "PRODUCT_DOCKER_HUB=${HUB_PRODUCT}" "${WORK[@]}" vex-toolchain:latest \
+  sh -c "tr -d '\r' < /work/scripts/generate-vex.sh > /tmp/g.sh && sh /tmp/g.sh" | tail -8
+ok "vex/statements/*.openvex.json                (Trivy/Wiz, pkg:oci)"
+ok "vex/statements-scout/*.vex.json             (Scout / Docker Hub pingidentity, pkg:docker)"
+ok "vex/statements-scout-local/*.vex.json        (Scout / localhost:5000, pkg:docker)"
+ok "vex/statements-scout-darkedges/*.vex.json    (Scout / Docker Hub ${HUB_IMAGE}, pkg:docker)"
 pause
 
 step 6 "Assemble VEX repository (spec v0.1 archive)"
@@ -151,10 +154,11 @@ else
   # Mutex rule (Gotcha 5 + 10): if the image has ANY attestation (provenance, SBOM),
   # Scout ignores ALL external VEX sources — both --vex-location files and filesystem-
   # embedded VEX — and reads only attestation-based VEX.
-  # pingidentity/pingaccess:8.3.4-edge is a modern Docker Hub image built with BuildKit,
-  # so it almost certainly carries provenance + SBOM attestations. --vex-location would
-  # be silently ignored regardless of the PURL form used.
-  # The correct suppression channel for this image is the attestation path: Steps 10-11.
+  # pingidentity/pingaccess:8.3.4-edge has NO attestations (confirmed via
+  # docker scout attestation list), so the mutex rule is not triggered here.
+  # Suppression via --vex-location still does not work for this image due to
+  # Scout <=1.20.0 behaviour (Gotcha 11). The attestation path (Steps 10-11) is
+  # the only confirmed working Scout suppression mechanism.
   printf '  Checking %s for attestations...\n' "$IMAGE"
   ORIG_ATTEST=$(docker scout attestation list "$IMAGE" 2>&1) || true
   echo "$ORIG_ATTEST" | grep -iE "SBOM|Provenance|openvex|predicate|No attestation" | sed 's/^/  /' || true
@@ -282,7 +286,7 @@ else
   else
     printf '%s  No attestations found on registry — using --vex-location with localhost:5000 PURL files.%s\n' "$YELLOW" "$RESET"
     printf '%s  This proves Scout respects the correct PURL form; for production use a registry with OCI referrers.%s\n' "$YELLOW" "$RESET"
-    docker scout cves "$SCOUT_IMAGE" --vex-location "$SCRIPT_DIR/vex" 2>&1 \
+    docker scout cves "$SCOUT_IMAGE" --vex-location "$SCRIPT_DIR/vex/pingaccess-scout-local.vex.json" 2>&1 \
       | tee "$SCRIPT_DIR/scout-suppressed-report.txt" || true
   fi
   ok "scout-suppressed-report.txt saved"
@@ -292,7 +296,29 @@ else
 fi
 pause
 
-step 12 "Build derived image with embedded VEX (filesystem fallback — see README)"
+step 12 "Scout Phase 5d — attach VEX attestations to Docker Hub image (optional)"
+# Attaches the Phase 3d VEX set (pkg:docker/<org>/... PURL) to the Docker Hub image
+# so scout.docker.com indexes the suppression. Requires HUB_IMAGE to be published on
+# Docker Hub; skips gracefully if not accessible or statements not yet generated.
+VEX_HUB_FILE="$SCRIPT_DIR/vex/pingaccess-scout-darkedges.vex.json"
+printf '  Target : %s\n' "$HUB_IMAGE"
+printf '  Product: %s\n' "$HUB_PRODUCT"
+if [ ! -f "$VEX_HUB_FILE" ]; then
+  printf '%s  [SKIP] %s not found — re-run Step 5 first.%s\n' "$YELLOW" "$VEX_HUB_FILE" "$RESET"
+elif docker scout attestation add \
+    --file "$VEX_HUB_FILE" \
+    --predicate-type https://openvex.dev/ns/v0.2.0 \
+    "$HUB_IMAGE" 2>&1; then
+  ok "$HUB_IMAGE — consolidated VEX attestation attached"
+  printf '  scout.docker.com will re-index the image within a few minutes.\n'
+  printf '  To verify: docker scout cves %s\n' "$HUB_IMAGE"
+else
+  printf '%s  [SKIP] Attestation add failed — is %s published on Docker Hub and logged in?%s\n' "$YELLOW" "$HUB_IMAGE" "$RESET"
+  printf '  Publish: docker tag %s %s && docker push %s\n' "$IMAGE" "$HUB_IMAGE" "$HUB_IMAGE"
+fi
+pause
+
+step 13 "Build derived image with embedded VEX (filesystem fallback — see README)"
 # IMPORTANT: mutual-exclusivity rule — if the image has ANY attestation (including
 # provenance auto-added by BuildKit), Scout ignores filesystem VEX entirely and reads
 # only attestations. To use filesystem embed, build with --provenance=false --sbom=false.
@@ -301,7 +327,7 @@ docker image inspect "$DERIVED" --format 'RepoDigests={{json .RepoDigests}} (emp
 ok "$DERIVED built (--provenance/--sbom not passed, so no attestations added)"
 pause
 
-step 13 "Trivy suppression proof on the digest-pinned ORIGINAL image"
+step 14 "Trivy suppression proof on the digest-pinned ORIGINAL image"
 docker run --rm "${SOCK[@]}" "${CACHE[@]}" "${WORK[@]}" vex-toolchain:latest \
   trivy image --quiet --skip-db-update --format json --show-suppressed \
   --vex /work/vex/pingaccess-8.3.4-edge.openvex.json \
@@ -318,7 +344,7 @@ show_results rescan-original-repo.json "b) --vex repo (original image)"
 ok "expected: 0 remaining findings, 70 suppressed for both"
 pause
 
-step 14 "Trivy re-scan of the DERIVED image three ways (expected: no suppression)"
+step 15 "Trivy re-scan of the DERIVED image three ways (expected: no suppression)"
 docker run --rm "${SOCK[@]}" "${CACHE[@]}" "${WORK[@]}" vex-toolchain:latest \
   trivy image --quiet --skip-db-update --format json --show-suppressed \
   --vex /work/vex/pingaccess-8.3.4-edge.openvex.json \
@@ -335,7 +361,7 @@ show_results rescan-c-embedded-only.json "c) embedded VEX only (derived image)"
 printf '%sNo suppression: VEX binds to the base digest; local derived images have none,\nand Trivy does not read in-image VEX files.%s\n' "$YELLOW" "$RESET"
 pause
 
-step 15 "Summary"
+step 16 "Summary"
 printf '%s%s\n' "$BOLD" "----------------------------------------------"
 printf 'baseline     : %s\n' "$(counts baseline-report.json)"
 printf 'trivy --vex  : %s\n' "$(counts suppressed-report.json)"
