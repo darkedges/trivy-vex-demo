@@ -1,0 +1,321 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ── better-auth required tables ───────────────────────────────────────────────
+
+model User {
+  id            String   @id
+  name          String
+  email         String   @unique
+  emailVerified Boolean
+  image         String?
+  createdAt     DateTime
+  updatedAt     DateTime
+
+  role        Role    @default(USER)
+  githubLogin String? @unique
+
+  accounts    Account[]
+  sessions    Session[]
+
+  teamMemberships     TeamMember[]
+  createdStatements   Statement[]   @relation("StatementCreatedBy")
+  approvedStatements  Statement[]   @relation("StatementApprovedBy")
+  createdPublications Publication[] @relation("PublicationCreatedBy")
+}
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String   @unique
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime
+  updatedAt DateTime
+}
+
+model Account {
+  id           String    @id
+  accountId    String
+  providerId   String
+  userId       String
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime
+  updatedAt             DateTime
+}
+
+model Verification {
+  id         String    @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime?
+  updatedAt  DateTime?
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+// ── Teams & RBAC ──────────────────────────────────────────────────────────────
+
+model Team {
+  id            String   @id @default(cuid())
+  name          String
+  slug          String   @unique
+  githubTeamId  Int?     @unique
+  description   String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  members  TeamMember[]
+  products ProductTeam[]
+}
+
+model TeamMember {
+  id        String   @id @default(cuid())
+  teamId    String
+  team      Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role      TeamRole @default(MEMBER)
+  createdAt DateTime @default(now())
+
+  @@unique([teamId, userId])
+}
+
+enum TeamRole {
+  MEMBER
+  MAINTAINER
+}
+
+// ── Products ──────────────────────────────────────────────────────────────────
+
+model Product {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+
+  ociPurl    String
+  dockerPurl String?
+
+  registryType   String
+  registryUrl    String?
+  repository     String
+  currentTag     String?
+  currentDigest  String?
+
+  // relative path within vex-repo-src/ e.g. "pkg/oci/pingaccess/vex.json"
+  vexRepoPath String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  teams        ProductTeam[]
+  statements   Statement[]
+  publications Publication[]
+}
+
+model ProductTeam {
+  id        String   @id @default(cuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  teamId    String
+  team      Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([productId, teamId])
+}
+
+// ── VEX Statements ────────────────────────────────────────────────────────────
+
+model Statement {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  vexDocId        String
+  vulnerabilityId String
+
+  status        VexStatus
+  justification String?
+  statusNotes   String?
+
+  // JSON array: [{ "@id": "pkg:...", "subcomponents": [{ "@id": "pkg:..." }] }]
+  productsJson String @default("[]")
+
+  author             String
+  docVersion         Int      @default(1)
+  statementTimestamp DateTime @default(now())
+
+  workflowState WorkflowState @default(DRAFT)
+  createdById   String
+  createdBy     User          @relation("StatementCreatedBy", fields: [createdById], references: [id])
+  approvedById  String?
+  approvedBy    User?         @relation("StatementApprovedBy", fields: [approvedById], references: [id])
+  approvedAt    DateTime?
+  rejectionNote String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  versions         StatementVersion[]
+  publicationLinks PublicationStatement[]
+
+  @@unique([productId, vulnerabilityId])
+}
+
+enum VexStatus {
+  NOT_AFFECTED
+  AFFECTED
+  FIXED
+  UNDER_INVESTIGATION
+}
+
+enum WorkflowState {
+  DRAFT
+  PENDING_APPROVAL
+  APPROVED
+  PUBLISHED
+  REJECTED
+}
+
+model StatementVersion {
+  id          String    @id @default(cuid())
+  statementId String
+  statement   Statement @relation(fields: [statementId], references: [id], onDelete: Cascade)
+  versionNum  Int
+  snapshot    String
+  changedById String
+  changeNote  String?
+  createdAt   DateTime  @default(now())
+}
+
+// ── Publications ──────────────────────────────────────────────────────────────
+
+model Publication {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  state PublicationState @default(PENDING_SIGNING)
+
+  // The exact merged OpenVEX document dispatched for signing — persisted here
+  // (rather than re-derived later) so the callback can hash/store precisely
+  // what was signed, byte for byte.
+  documentJson String?
+
+  workflowRunId  String?
+  workflowRunUrl String?
+
+  ghPagesCommitSha String?
+  ghPagesBranch    String  @default("gh-pages")
+  tarGzSha256      String?
+  lastError        String?
+
+  createdById String
+  createdBy   User        @relation("PublicationCreatedBy", fields: [createdById], references: [id])
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  statements    PublicationStatement[]
+  signingRecord SigningRecord?
+}
+
+enum PublicationState {
+  PENDING_SIGNING
+  SIGNING_IN_PROGRESS
+  SIGNING_FAILED
+  SIGNED
+  PUBLISHING
+  PUBLISHED
+  PUBLISH_FAILED
+}
+
+model PublicationStatement {
+  id            String      @id @default(cuid())
+  publicationId String
+  publication   Publication @relation(fields: [publicationId], references: [id], onDelete: Cascade)
+  statementId   String
+  statement     Statement   @relation(fields: [statementId], references: [id], onDelete: Cascade)
+  snapshot      String
+
+  @@unique([publicationId, statementId])
+}
+
+model SigningRecord {
+  id            String      @id @default(cuid())
+  publicationId String      @unique
+  publication   Publication @relation(fields: [publicationId], references: [id])
+
+  documentHash    String
+  documentContent String
+
+  rekorLogIndex  Int?
+  rekorLogUuid   String?
+  rekorEntryUrl  String?
+  signerIdentity String?
+  signerIssuer   String?
+
+  bundleJson String?
+
+  verified   Boolean   @default(false)
+  verifiedAt DateTime?
+  createdAt  DateTime  @default(now())
+}
+
+// ── Registry Configs ──────────────────────────────────────────────────────────
+
+model RegistryConfig {
+  id         String   @id @default(cuid())
+  name       String
+  type       String
+  url        String?
+  configJson String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// ── App Settings (single-row) ─────────────────────────────────────────────────
+
+model AppSettings {
+  id String @id @default("singleton")
+
+  githubOrg           String?
+  signingWorkflowRepo String?
+  signingWorkflowPath String? @default(".github/workflows/sign-vex.yml")
+  signingCallbackSecret String?
+
+  vexRepoName         String?
+  vexRepoDescription  String?
+  vexRepoUpdateInterval String @default("1h")
+  vexRepoPublicUrl    String?
+
+  ghPagesBranch String  @default("gh-pages")
+  ghPagesRepo   String?
+
+  vexRepoSrcPath    String?
+  vexRepoDirPath    String?
+  vexStatementsPath String?
+
+  vexDocBaseUrl String @default("https://darkedges.com/vex")
+
+  updatedAt DateTime @updatedAt
+}

@@ -1,0 +1,82 @@
+# Keyless VEX signing workflow, dispatched by vex-ui's Publish action.
+#
+# Setup:
+#   1. Copy this file to .github/workflows/sign-vex.yml in the repo configured
+#      as "Signing Workflow Repo" in vex-ui's Admin -> Settings (org-level
+#      ".github" repo is a reasonable place to put it).
+#   2. Add a repo or org secret named VEX_UI_SIGNING_SECRET — its value must
+#      match the "Callback Secret" configured in the same Settings page.
+#   3. permissions: id-token: write is what makes keyless signing possible —
+#      it lets this job mint a short-lived OIDC token that cosign exchanges
+#      for a Fulcio certificate, with no long-lived signing key to manage.
+#
+# vex-ui dispatches this via workflow_dispatch with three inputs
+# (publication_id, document_b64, callback_url) and waits for this workflow to
+# call callback_url back with the signed bundle (or a failure reason),
+# HMAC-authenticated with VEX_UI_SIGNING_SECRET.
+
+name: Sign VEX Document
+
+on:
+  workflow_dispatch:
+    inputs:
+      publication_id:
+        description: "vex-ui Publication ID"
+        required: true
+      document_b64:
+        description: "Base64-encoded OpenVEX document to sign"
+        required: true
+      callback_url:
+        description: "vex-ui callback URL to report the result to"
+        required: true
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install cosign
+        uses: sigstore/cosign-installer@v3
+
+      - name: Decode document
+        run: echo "${{ inputs.document_b64 }}" | base64 -d > document.json
+
+      - name: Sign (keyless)
+        run: cosign sign-blob --yes --bundle bundle.json document.json
+
+      - name: Report success to vex-ui
+        if: success()
+        env:
+          CALLBACK_SECRET: ${{ secrets.VEX_UI_SIGNING_SECRET }}
+        run: |
+          PAYLOAD=$(jq -n \
+            --arg pub "${{ inputs.publication_id }}" \
+            --slurpfile bundle bundle.json \
+            --arg runid "$GITHUB_RUN_ID" \
+            --arg runurl "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            '{publicationId: $pub, success: true, bundle: $bundle[0], workflowRunId: $runid, workflowRunUrl: $runurl}')
+          SIGNATURE=$(printf '%s' "$PAYLOAD" | openssl dgst -sha256 -hmac "$CALLBACK_SECRET" | sed 's/^.* //')
+          curl -sf -X POST "${{ inputs.callback_url }}" \
+            -H "Content-Type: application/json" \
+            -H "X-Signature: $SIGNATURE" \
+            -d "$PAYLOAD"
+
+      - name: Report failure to vex-ui
+        if: failure()
+        env:
+          CALLBACK_SECRET: ${{ secrets.VEX_UI_SIGNING_SECRET }}
+        run: |
+          PAYLOAD=$(jq -n \
+            --arg pub "${{ inputs.publication_id }}" \
+            --arg err "Signing failed — see the workflow run for details" \
+            --arg runid "$GITHUB_RUN_ID" \
+            --arg runurl "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" \
+            '{publicationId: $pub, success: false, error: $err, workflowRunId: $runid, workflowRunUrl: $runurl}')
+          SIGNATURE=$(printf '%s' "$PAYLOAD" | openssl dgst -sha256 -hmac "$CALLBACK_SECRET" | sed 's/^.* //')
+          curl -sf -X POST "${{ inputs.callback_url }}" \
+            -H "Content-Type: application/json" \
+            -H "X-Signature: $SIGNATURE" \
+            -d "$PAYLOAD"

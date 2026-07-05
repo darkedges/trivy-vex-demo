@@ -1,0 +1,26 @@
+# Next.js
+.next/
+out/
+
+# Node
+node_modules/
+.pnpm-store/
+
+# Database
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+prisma/dev.db
+
+# Env
+.env
+.env.local
+.env*.local
+
+# Build
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
