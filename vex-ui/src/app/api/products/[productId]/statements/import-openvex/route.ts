@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { assertCanEditProduct } from "@/lib/rbac";
+import { assertCanEditProduct, isAdmin } from "@/lib/rbac";
+import { getResolvedSettings } from "@/lib/settings";
+import { JUSTIFICATIONS } from "@/lib/vex/openvex";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -34,8 +36,8 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
   const product = await db.product.findUnique({ where: { id: productId } });
   if (!product) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  const settings = await db.appSettings.findUnique({ where: { id: "singleton" } });
-  const dir = settings?.vexStatementsPath || process.env.VEX_STATEMENTS_PATH;
+  const settings = await getResolvedSettings();
+  const dir = settings.vexStatementsPath;
   if (!dir) {
     return NextResponse.json(
       { error: "vex/statements/ path is not configured (Admin → Settings → Filesystem Paths)" },
@@ -53,6 +55,13 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
 
   const existing = await db.statement.findMany({ where: { productId }, select: { vulnerabilityId: true } });
   const existingIds = new Set(existing.map((s) => s.vulnerabilityId));
+
+  // Only admins may import directly to APPROVED (the files carry a finished
+  // assessment); everyone else lands imports as DRAFT so the normal
+  // submit/approve gate still applies.
+  const adminUser = await isAdmin(session.user.id);
+
+  const VALID_STATUSES = new Set(["NOT_AFFECTED", "AFFECTED", "FIXED", "UNDER_INVESTIGATION"]);
 
   let created = 0;
   let skipped = 0;
@@ -77,6 +86,23 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
         continue;
       }
 
+      // Enforce the same invariants as the manual-create route: known status,
+      // and justification present iff status is not_affected.
+      const status = stmt.status?.toUpperCase();
+      if (!status || !VALID_STATUSES.has(status)) {
+        errors.push(`${filename}: unknown status "${stmt.status}"`);
+        continue;
+      }
+      const justification = stmt.justification ?? null;
+      if (status === "NOT_AFFECTED" && (!justification || !(JUSTIFICATIONS as readonly string[]).includes(justification))) {
+        errors.push(`${filename}: not_affected requires a valid justification (got "${justification}")`);
+        continue;
+      }
+      if (status !== "NOT_AFFECTED" && justification) {
+        errors.push(`${filename}: justification is only valid with not_affected status`);
+        continue;
+      }
+
       const purls = stmt.products?.[0]?.subcomponents?.map((s) => s["@id"]) ?? [];
 
       await db.statement.create({
@@ -84,17 +110,17 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
           productId,
           vexDocId: doc["@id"],
           vulnerabilityId,
-          status: stmt.status.toUpperCase() as "NOT_AFFECTED" | "AFFECTED" | "FIXED" | "UNDER_INVESTIGATION",
-          justification: stmt.justification ?? null,
+          status: status as "NOT_AFFECTED" | "AFFECTED" | "FIXED" | "UNDER_INVESTIGATION",
+          justification,
           statusNotes: stmt.status_notes ?? null,
           productsJson: JSON.stringify([
             { "@id": product.ociPurl, subcomponents: purls.map((p) => ({ "@id": p })) },
           ]),
           author: doc.author,
-          workflowState: "APPROVED",
+          workflowState: adminUser ? "APPROVED" : "DRAFT",
           createdById: session.user.id,
-          approvedById: session.user.id,
-          approvedAt: now,
+          approvedById: adminUser ? session.user.id : null,
+          approvedAt: adminUser ? now : null,
         },
       });
       existingIds.add(vulnerabilityId);

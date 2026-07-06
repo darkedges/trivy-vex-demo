@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { assertCanEditProduct } from "@/lib/rbac";
 import { buildVexDocId, buildProductsJson, JUSTIFICATIONS } from "@/lib/vex/openvex";
+import { getResolvedSettings } from "@/lib/settings";
 import { z } from "zod";
 
 const createSchema = z
@@ -53,12 +54,12 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
     return NextResponse.json({ error: "A statement for this vulnerability already exists" }, { status: 409 });
   }
 
-  const settings = await db.appSettings.findUnique({ where: { id: "singleton" } });
+  const settings = await getResolvedSettings();
 
   const statement = await db.statement.create({
     data: {
       productId,
-      vexDocId: buildVexDocId(settings?.vexDocBaseUrl, product.slug, parsed.data.vulnerabilityId),
+      vexDocId: buildVexDocId(settings.vexDocBaseUrl, product.slug, parsed.data.vulnerabilityId),
       vulnerabilityId: parsed.data.vulnerabilityId,
       status: parsed.data.status,
       justification: parsed.data.justification ?? null,

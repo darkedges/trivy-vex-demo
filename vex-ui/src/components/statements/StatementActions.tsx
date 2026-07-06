@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Check, X, Send } from "lucide-react";
+import { Check, X, Send, RotateCcw } from "lucide-react";
 
 export function StatementActions({
   productId,
@@ -47,12 +47,25 @@ export function StatementActions({
 
   const canSubmit = canEdit && (workflowState === "DRAFT" || workflowState === "REJECTED");
   const canReview = isAdminUser && workflowState === "PENDING_APPROVAL";
+  const canRevise = canEdit && workflowState === "PUBLISHED";
 
-  if (!canSubmit && !canReview) return error ? <p className="text-sm text-destructive">{error}</p> : null;
+  if (!canSubmit && !canReview && !canRevise)
+    return error ? <p className="text-sm text-destructive">{error}</p> : null;
 
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap gap-2">
+        {canRevise && (
+          <button
+            onClick={() => post("revise")}
+            disabled={pending}
+            className="flex items-center gap-1.5 rounded-md border px-3 py-2 text-sm font-medium hover:bg-accent disabled:opacity-50 transition-colors"
+            title="Re-open this published statement as a draft for correction"
+          >
+            <RotateCcw className="h-4 w-4" />
+            Revise
+          </button>
+        )}
         {canSubmit && (
           <button
             onClick={() => post("submit")}

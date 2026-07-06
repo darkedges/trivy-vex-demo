@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { getResolvedSettings } from "@/lib/settings";
 import { createHash, createHmac, timingSafeEqual } from "node:crypto";
 
 function verifySignature(rawBody: string, signatureHex: string, secret: string): boolean {
@@ -32,8 +33,7 @@ interface CallbackBody {
  * rather than a session, since the caller is a workflow run, not a browser.
  */
 export async function POST(request: NextRequest) {
-  const settings = await db.appSettings.findUnique({ where: { id: "singleton" } });
-  const secret = settings?.signingCallbackSecret;
+  const { signingCallbackSecret: secret } = await getResolvedSettings();
   if (!secret) {
     return NextResponse.json({ error: "Signing callback is not configured" }, { status: 400 });
   }

@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { assertCanEditProduct } from "@/lib/rbac";
 import { buildMergedDocument } from "@/lib/vex/merge-doc";
+import { getResolvedSettings } from "@/lib/settings";
 import { Octokit } from "@octokit/rest";
 import path from "node:path";
 
@@ -45,7 +46,7 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
     return NextResponse.json({ error: "No approved statements to publish" }, { status: 400 });
   }
 
-  const settings = await db.appSettings.findUnique({ where: { id: "singleton" } });
+  const settings = await getResolvedSettings();
   const { json } = buildMergedDocument(product, statements, settings);
 
   const publication = await db.publication.create({
@@ -61,17 +62,21 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
   });
 
   const token = process.env.GITHUB_TOKEN;
-  const org = settings?.githubOrg;
-  const workflowRepo = settings?.signingWorkflowRepo;
-  const workflowPath = settings?.signingWorkflowPath || ".github/workflows/sign-vex.yml";
+  const org = settings.githubOrg;
+  const workflowRepo = settings.signingWorkflowRepo;
+  const workflowPath = settings.signingWorkflowPath;
   const appUrl = process.env.NEXT_PUBLIC_APP_URL;
 
-  if (!token || !org || !workflowRepo || !appUrl) {
+  // Validate everything the whole pipeline needs — including what only the
+  // callback will use — BEFORE dispatching, so a misconfiguration fails here
+  // instead of stranding the publication after the workflow has already run.
+  if (!token || !org || !workflowRepo || !appUrl || !settings.signingCallbackSecret) {
     const missing = [
       !token && "GITHUB_TOKEN",
-      !org && "Admin → Settings → GitHub Organization",
-      !workflowRepo && "Admin → Settings → Signing Workflow Repo",
+      !org && "GitHub Organization (Settings or GITHUB_ORG)",
+      !workflowRepo && "Signing Workflow Repo (Settings)",
       !appUrl && "NEXT_PUBLIC_APP_URL",
+      !settings.signingCallbackSecret && "Callback Secret (Settings or SIGNING_CALLBACK_SECRET)",
     ]
       .filter(Boolean)
       .join(", ");
@@ -85,6 +90,17 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
     const repoInfo = await octokit.rest.repos.get({ owner: org, repo: workflowRepo });
     const workflowId = path.basename(workflowPath);
 
+    // Transition BEFORE dispatching: the workflow fetches the document from
+    // /api/publish/{id}/document, which only serves SIGNING_IN_PROGRESS —
+    // dispatching first would race the workflow against our own update.
+    // The document travels by URL rather than as a dispatch input because
+    // GitHub caps each workflow_dispatch input at 65,535 chars (~70
+    // statements base64-encoded).
+    await db.publication.update({
+      where: { id: publication.id },
+      data: { state: "SIGNING_IN_PROGRESS" },
+    });
+
     await octokit.rest.actions.createWorkflowDispatch({
       owner: org,
       repo: workflowRepo,
@@ -92,15 +108,12 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
       ref: repoInfo.data.default_branch,
       inputs: {
         publication_id: publication.id,
-        document_b64: Buffer.from(json, "utf8").toString("base64"),
+        document_url: `${appUrl}/api/publish/${publication.id}/document`,
         callback_url: `${appUrl}/api/publish/callback`,
       },
     });
 
-    const updated = await db.publication.update({
-      where: { id: publication.id },
-      data: { state: "SIGNING_IN_PROGRESS" },
-    });
+    const updated = await db.publication.findUnique({ where: { id: publication.id } });
     return NextResponse.json(updated, { status: 201 });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Failed to dispatch signing workflow";

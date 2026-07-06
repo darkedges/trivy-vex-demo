@@ -6,11 +6,19 @@ export const auth = betterAuth({
   database: prismaAdapter(db, { provider: "sqlite" }),
   baseURL: process.env.BETTER_AUTH_URL ?? "http://localhost:3000",
   secret: process.env.BETTER_AUTH_SECRET,
+  user: {
+    additionalFields: {
+      // Persisted from the GitHub profile at sign-in; /api/admin/teams/sync
+      // matches org team members against this column.
+      githubLogin: { type: "string", required: false, input: false },
+    },
+  },
   socialProviders: {
     github: {
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
       scope: ["read:org", "read:user", "user:email"],
+      mapProfileToUser: (profile) => ({ githubLogin: profile.login }),
     },
   },
   session: {

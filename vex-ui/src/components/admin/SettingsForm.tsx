@@ -25,6 +25,9 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
+// Prisma returns null for unset fields; the form treats null and undefined the same.
+export type SettingsFormInitial = { [K in keyof FormValues]?: string | null };
+
 const TABS = [
   { value: "github", label: "GitHub" },
   { value: "signing", label: "Signing" },
@@ -32,7 +35,7 @@ const TABS = [
   { value: "paths", label: "Filesystem Paths" },
 ] as const;
 
-export function SettingsForm({ initialSettings }: { initialSettings: Partial<FormValues> | null }) {
+export function SettingsForm({ initialSettings }: { initialSettings: SettingsFormInitial | null }) {
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

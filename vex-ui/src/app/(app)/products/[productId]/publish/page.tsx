@@ -7,7 +7,11 @@ import Link from "next/link";
 import { ChevronRight, FileCheck2 } from "lucide-react";
 import { format } from "date-fns";
 import { publicationStateColors } from "@/lib/vex/badges";
-import { CreatePublicationButton, PublishToPagesButton } from "@/components/publications/PublicationActions";
+import {
+  CreatePublicationButton,
+  PublishToPagesButton,
+  CancelPublicationButton,
+} from "@/components/publications/PublicationActions";
 import { PublicationPoller } from "@/components/publications/PublicationPoller";
 
 type Props = { params: Promise<{ productId: string }> };
@@ -120,8 +124,19 @@ export default async function PublishPage({ params }: Props) {
                       </p>
                     )}
                   </div>
-                  {canEdit && p.state === "SIGNED" && (
-                    <PublishToPagesButton productId={productId} publicationId={p.id} />
+                  {canEdit && (
+                    <div className="flex flex-col gap-2 items-end">
+                      {p.state === "SIGNED" && <PublishToPagesButton productId={productId} publicationId={p.id} />}
+                      {p.state === "PUBLISH_FAILED" && (
+                        <PublishToPagesButton productId={productId} publicationId={p.id} label="Retry publish" />
+                      )}
+                      {p.state === "PUBLISHED" && (
+                        <PublishToPagesButton productId={productId} publicationId={p.id} label="Re-publish" />
+                      )}
+                      {["PENDING_SIGNING", "SIGNING_IN_PROGRESS", "PUBLISHING"].includes(p.state) && (
+                        <CancelPublicationButton productId={productId} publicationId={p.id} />
+                      )}
+                    </div>
                   )}
                 </div>
               </div>

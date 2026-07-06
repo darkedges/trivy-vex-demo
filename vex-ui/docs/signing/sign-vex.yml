@@ -11,8 +11,10 @@
 #      for a Fulcio certificate, with no long-lived signing key to manage.
 #
 # vex-ui dispatches this via workflow_dispatch with three inputs
-# (publication_id, document_b64, callback_url) and waits for this workflow to
-# call callback_url back with the signed bundle (or a failure reason),
+# (publication_id, document_url, callback_url). The document is FETCHED from
+# document_url rather than passed inline, because GitHub caps each
+# workflow_dispatch input at 65,535 characters — too small for large merged
+# OpenVEX documents. Both the fetch and the result callback are
 # HMAC-authenticated with VEX_UI_SIGNING_SECRET.
 
 name: Sign VEX Document
@@ -23,8 +25,8 @@ on:
       publication_id:
         description: "vex-ui Publication ID"
         required: true
-      document_b64:
-        description: "Base64-encoded OpenVEX document to sign"
+      document_url:
+        description: "vex-ui URL to fetch the OpenVEX document from"
         required: true
       callback_url:
         description: "vex-ui callback URL to report the result to"
@@ -41,8 +43,13 @@ jobs:
       - name: Install cosign
         uses: sigstore/cosign-installer@v3
 
-      - name: Decode document
-        run: echo "${{ inputs.document_b64 }}" | base64 -d > document.json
+      - name: Fetch document from vex-ui
+        env:
+          CALLBACK_SECRET: ${{ secrets.VEX_UI_SIGNING_SECRET }}
+        run: |
+          SIGNATURE=$(printf '%s' "${{ inputs.publication_id }}" | openssl dgst -sha256 -hmac "$CALLBACK_SECRET" | sed 's/^.* //')
+          curl -sf -H "X-Signature: $SIGNATURE" "${{ inputs.document_url }}" -o document.json
+          test -s document.json
 
       - name: Sign (keyless)
         run: cosign sign-blob --yes --bundle bundle.json document.json

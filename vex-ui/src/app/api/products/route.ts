@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { getAccessibleProductIds } from "@/lib/rbac";
+import { getAccessibleProductIds, isAdmin } from "@/lib/rbac";
 import { z } from "zod";
 
 const createSchema = z.object({
@@ -47,6 +47,28 @@ export async function POST(request: NextRequest) {
   }
 
   const { teamIds, ...data } = parsed.data;
+
+  // Admins can create anything; otherwise the caller must be a MAINTAINER of
+  // every team the product is being attached to (and must attach at least
+  // one, or the product would be visible only to admins).
+  if (!(await isAdmin(session.user.id))) {
+    if (!teamIds?.length) {
+      return NextResponse.json(
+        { error: "Non-admin users must assign the product to at least one of their teams" },
+        { status: 403 }
+      );
+    }
+    const maintainerOf = await db.teamMember.findMany({
+      where: { userId: session.user.id, role: "MAINTAINER", teamId: { in: teamIds } },
+      select: { teamId: true },
+    });
+    if (maintainerOf.length !== new Set(teamIds).size) {
+      return NextResponse.json(
+        { error: "You must be a maintainer of every team you assign this product to" },
+        { status: 403 }
+      );
+    }
+  }
 
   const existing = await db.product.findUnique({ where: { slug: data.slug } });
   if (existing) {

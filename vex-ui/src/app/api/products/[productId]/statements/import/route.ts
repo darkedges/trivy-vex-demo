@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { assertCanEditProduct } from "@/lib/rbac";
 import { buildVexDocId, buildProductsJson } from "@/lib/vex/openvex";
+import { getResolvedSettings } from "@/lib/settings";
 import { z } from "zod";
 
 const importSchema = z.object({
@@ -16,7 +17,7 @@ const importSchema = z.object({
     .min(1),
 });
 
-const IMPORT_STATUS_NOTES = "Imported from a Trivy scan — pending analyst review; not yet assessed.";
+const IMPORT_STATUS_NOTES = "Imported from a Trivy scan — under investigation; not yet assessed.";
 
 type RouteContext = { params: Promise<{ productId: string }> };
 
@@ -41,7 +42,7 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
   const product = await db.product.findUnique({ where: { id: productId } });
   if (!product) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  const settings = await db.appSettings.findUnique({ where: { id: "singleton" } });
+  const settings = await getResolvedSettings();
 
   const existing = await db.statement.findMany({ where: { productId }, select: { vulnerabilityId: true } });
   const existingIds = new Set(existing.map((s) => s.vulnerabilityId));
@@ -61,10 +62,13 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
     await db.statement.create({
       data: {
         productId,
-        vexDocId: buildVexDocId(settings?.vexDocBaseUrl, product.slug, item.vulnerabilityId),
+        vexDocId: buildVexDocId(settings.vexDocBaseUrl, product.slug, item.vulnerabilityId),
         vulnerabilityId: item.vulnerabilityId,
-        status: "NOT_AFFECTED",
-        justification: "vulnerable_code_not_in_execute_path",
+        // Honest default for an unreviewed finding: an analyst must
+        // deliberately assert not_affected + a justification via the editor
+        // before this can be published as a suppression.
+        status: "UNDER_INVESTIGATION",
+        justification: null,
         statusNotes: IMPORT_STATUS_NOTES,
         productsJson: buildProductsJson(product.ociPurl, item.purls),
         author,

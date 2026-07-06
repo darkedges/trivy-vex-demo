@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { assertIsAdmin } from "@/lib/rbac";
+import { getResolvedSettings } from "@/lib/settings";
 import { Octokit } from "@octokit/rest";
 
 export async function POST(request: NextRequest) {
@@ -14,8 +15,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  const settings = await db.appSettings.findUnique({ where: { id: "singleton" } });
-  const org = settings?.githubOrg ?? process.env.GITHUB_ORG;
+  const { githubOrg: org } = await getResolvedSettings();
   if (!org) {
     return NextResponse.json({ error: "GitHub org not configured" }, { status: 400 });
   }

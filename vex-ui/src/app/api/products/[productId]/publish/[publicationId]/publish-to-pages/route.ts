@@ -6,6 +6,7 @@ import { buildVexRepoArchive } from "@/lib/vex/repo-archive";
 import { buildIndexPackageId } from "@/lib/vex/purl";
 import { buildRepoIndexHtml } from "@/lib/vex/repo-index-page";
 import { commitFilesToBranch } from "@/lib/gh/git-commit";
+import { getResolvedSettings } from "@/lib/settings";
 import { Octokit } from "@octokit/rest";
 import { createHash } from "node:crypto";
 
@@ -27,7 +28,10 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
   if (!publication || publication.productId !== productId) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
-  if (publication.state !== "SIGNED") {
+  // SIGNED = first publish; PUBLISH_FAILED = retry (the signature is still
+  // valid, no need to re-sign); PUBLISHED = re-publish (e.g. after fixing
+  // settings that produced a bad manifest). The commit is idempotent.
+  if (!["SIGNED", "PUBLISH_FAILED", "PUBLISHED"].includes(publication.state)) {
     return NextResponse.json({ error: `Cannot publish from ${publication.state} state` }, { status: 409 });
   }
   if (!publication.documentJson) {
@@ -37,13 +41,20 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
   const product = await db.product.findUnique({ where: { id: productId } });
   if (!product) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
-  const settings = await db.appSettings.findUnique({ where: { id: "singleton" } });
+  const settings = await getResolvedSettings();
   const token = process.env.GITHUB_TOKEN;
-  const ghPagesRepo = settings?.ghPagesRepo;
-  const ghPagesBranch = settings?.ghPagesBranch || "gh-pages";
+  const ghPagesRepo = settings.ghPagesRepo;
+  const ghPagesBranch = settings.ghPagesBranch;
 
-  if (!token || !ghPagesRepo) {
-    const missing = [!token && "GITHUB_TOKEN", !ghPagesRepo && "Admin → Settings → GitHub Pages Repo"]
+  // publicUrl feeds the manifest's archive location — without it the
+  // published .well-known/vex-repository.json points at a relative URL no
+  // consumer can fetch, so refuse to publish rather than succeed uselessly.
+  if (!token || !ghPagesRepo || !settings.vexRepoPublicUrl) {
+    const missing = [
+      !token && "GITHUB_TOKEN",
+      !ghPagesRepo && "GitHub Pages Repo (Settings or GH_PAGES_REPO)",
+      !settings.vexRepoPublicUrl && "VEX Repository Public URL (Settings or VEX_REPO_PUBLIC_URL)",
+    ]
       .filter(Boolean)
       .join(", ");
     const lastError = `Publishing is not configured: missing ${missing}`;
@@ -51,7 +62,7 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
     return NextResponse.json({ error: lastError }, { status: 400 });
   }
 
-  const [owner, repo] = ghPagesRepo.includes("/") ? ghPagesRepo.split("/") : [settings?.githubOrg, ghPagesRepo];
+  const [owner, repo] = ghPagesRepo.includes("/") ? ghPagesRepo.split("/") : [settings.githubOrg, ghPagesRepo];
   if (!owner || !repo) {
     const lastError = "GitHub Pages Repo must be in owner/repo form (or set a GitHub Organization in Settings)";
     await db.publication.update({ where: { id: publicationId }, data: { state: "PUBLISH_FAILED", lastError } });
@@ -119,13 +130,13 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
 
     const manifest = JSON.stringify(
       {
-        name: settings?.vexRepoName || "VEX Repository",
-        description: settings?.vexRepoDescription || "",
+        name: settings.vexRepoName,
+        description: settings.vexRepoDescription,
         versions: [
           {
             spec_version: "0.1",
-            locations: [{ url: `${settings?.vexRepoPublicUrl || ""}/v0.1/vex-data.tar.gz` }],
-            update_interval: settings?.vexRepoUpdateInterval || "1h",
+            locations: [{ url: `${settings.vexRepoPublicUrl.replace(/\/$/, "")}/v0.1/vex-data.tar.gz` }],
+            update_interval: settings.vexRepoUpdateInterval,
           },
         ],
       },
@@ -134,9 +145,9 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
     );
 
     const indexHtml = buildRepoIndexHtml({
-      repoName: settings?.vexRepoName || "VEX Repository",
-      description: settings?.vexRepoDescription || "",
-      updateInterval: settings?.vexRepoUpdateInterval || "1h",
+      repoName: settings.vexRepoName,
+      description: settings.vexRepoDescription,
+      updateInterval: settings.vexRepoUpdateInterval,
       updatedAt,
       packages: packages.map(({ product: p, documentJson, workflowRunUrl, signingRecord }) => {
         let statementCount = 0;
@@ -158,6 +169,9 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
 
     const octokit = new Octokit({ auth: token });
     const commitFiles = [
+      // Without .nojekyll, GitHub Pages' default Jekyll build silently drops
+      // dot-directories — including .well-known/, where the manifest lives.
+      { path: ".nojekyll", content: "" },
       { path: "index.html", content: indexHtml },
       { path: ".well-known/vex-repository.json", content: manifest },
       { path: `pkg/oci/${product.slug}/vex.json`, content: publication.documentJson },
