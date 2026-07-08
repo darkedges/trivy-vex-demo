@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { assertCanViewProduct, assertCanEditProduct } from "@/lib/rbac";
+import { canEditProduct } from "@/lib/rbac";
 import { recordStatementVersion } from "@/lib/vex/statement";
 import { buildProductsJson, JUSTIFICATIONS } from "@/lib/vex/openvex";
 import { z } from "zod";
@@ -25,35 +25,13 @@ const updateSchema = z
 
 type RouteContext = { params: Promise<{ productId: string; statementId: string }> };
 
-export async function GET(request: NextRequest, { params }: RouteContext) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { productId, statementId } = await params;
-
-  try {
-    await assertCanViewProduct(session.user.id, productId);
-  } catch {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
-  const statement = await db.statement.findUnique({ where: { id: statementId } });
-  if (!statement || statement.productId !== productId) {
-    return NextResponse.json({ error: "Not found" }, { status: 404 });
-  }
-
-  return NextResponse.json(statement);
-}
-
 export async function PUT(request: NextRequest, { params }: RouteContext) {
   const session = await auth.api.getSession({ headers: request.headers });
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { productId, statementId } = await params;
 
-  try {
-    await assertCanEditProduct(session.user.id, productId);
-  } catch {
+  if (!(await canEditProduct(session.user.id, productId))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

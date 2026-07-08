@@ -1,27 +1,15 @@
 import type { Product } from "@prisma/client";
+import { canonicalRepositoryUrl } from "@/lib/registry";
 
-type ProductRegistryFields = Pick<Product, "registryType" | "registryUrl" | "repository">;
+type ProductPurlFields = Pick<Product, "registryType" | "registryUrl" | "repository" | "slug">;
 
 /**
- * Derives the `repository_url` qualifier Trivy's --vex repo lookup keeps for
- * pkg:oci purls (see the main README's documented gotcha — a bare
- * pkg:oci/<name> is never matched; the qualifier must be present and match
- * what Trivy derives from the scanned image). Best-effort beyond
- * dockerhub/ghcr — verify against a real `trivy image --vex repo` run.
+ * Builds the pkg:oci purl (with Trivy's required repository_url qualifier —
+ * see the main README's documented gotcha) for a product's index.json entry.
+ * Registry-host knowledge lives in lib/registry; this only assembles the purl.
  */
-export function buildRepositoryUrlQualifier(product: ProductRegistryFields): string | undefined {
-  switch (product.registryType) {
-    case "dockerhub":
-      return `index.docker.io/${product.repository}`;
-    case "ghcr":
-      return `${product.registryUrl || "ghcr.io"}/${product.repository}`;
-    default:
-      return product.registryUrl ? `${product.registryUrl}/${product.repository}` : undefined;
-  }
-}
-
-export function buildIndexPackageId(product: ProductRegistryFields & Pick<Product, "slug">): string {
-  const qualifier = buildRepositoryUrlQualifier(product);
+export function buildIndexPackageId(product: ProductPurlFields): string {
+  const qualifier = canonicalRepositoryUrl(product);
   const base = `pkg:oci/${product.slug}`;
   return qualifier ? `${base}?repository_url=${encodeURIComponent(qualifier)}` : base;
 }

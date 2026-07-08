@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { assertCanViewProduct } from "@/lib/rbac";
+import { canViewProduct } from "@/lib/rbac";
 import { listRegistryTags, RegistryError } from "@/lib/registry";
 
 type RouteContext = { params: Promise<{ productId: string }> };
@@ -12,9 +12,7 @@ export async function GET(request: NextRequest, { params }: RouteContext) {
 
   const { productId } = await params;
 
-  try {
-    await assertCanViewProduct(session.user.id, productId);
-  } catch {
+  if (!(await canViewProduct(session.user.id, productId))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

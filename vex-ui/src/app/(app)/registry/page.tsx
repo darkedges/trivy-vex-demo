@@ -1,6 +1,6 @@
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { getAccessibleProductIds, canEditProduct } from "@/lib/rbac";
+import { getAccessibleProductIds, getEditableProductIds } from "@/lib/rbac";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { Container } from "lucide-react";
@@ -10,16 +10,20 @@ export default async function RegistryPage() {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session) redirect("/login");
 
-  const access = await getAccessibleProductIds(session.user.id);
+  const [access, editable] = await Promise.all([
+    getAccessibleProductIds(session.user.id),
+    getEditableProductIds(session.user.id),
+  ]);
   const products = await db.product.findMany({
     where: access === "all" ? {} : { id: { in: access } },
     select: { id: true, name: true, repository: true, registryType: true, currentTag: true },
     orderBy: { name: "asc" },
   });
 
-  const entries = await Promise.all(
-    products.map(async (p) => ({ ...p, canEdit: await canEditProduct(session.user.id, p.id) }))
-  );
+  const entries = products.map((p) => ({
+    ...p,
+    canEdit: editable === "all" || editable.has(p.id),
+  }));
 
   return (
     <div className="space-y-6">

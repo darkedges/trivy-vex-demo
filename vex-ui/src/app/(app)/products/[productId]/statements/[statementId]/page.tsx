@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { auth } from "@/lib/auth";
-import { assertCanViewProduct, canEditProduct, isAdmin } from "@/lib/rbac";
+import { getProductPermissions } from "@/lib/rbac";
 import { headers } from "next/headers";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import { extractPurls } from "@/lib/vex/openvex";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { StatementDetailTabs } from "@/components/statements/StatementDetailTabs";
 
 type Props = { params: Promise<{ productId: string; statementId: string }> };
@@ -15,11 +14,8 @@ export default async function StatementDetailPage({ params }: Props) {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session) notFound();
 
-  try {
-    await assertCanViewProduct(session.user.id, productId);
-  } catch {
-    notFound();
-  }
+  const perms = await getProductPermissions(session.user.id, productId);
+  if (!perms.canView) notFound();
 
   const [product, statement] = await Promise.all([
     db.product.findUnique({ where: { id: productId } }),
@@ -44,22 +40,20 @@ export default async function StatementDetailPage({ params }: Props) {
   });
   const changedByName = Object.fromEntries(changedByUsers.map((u) => [u.id, u.name]));
 
-  const [canEdit, adminUser] = await Promise.all([
-    canEditProduct(session.user.id, productId),
-    isAdmin(session.user.id),
-  ]);
+  const canEdit = perms.canEdit;
+  const adminUser = perms.isAdmin;
 
   const purls = extractPurls(statement.productsJson);
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-1 text-sm text-muted-foreground">
-        <Link href="/products" className="hover:text-foreground transition-colors">Products</Link>
-        <ChevronRight className="h-3.5 w-3.5" />
-        <Link href={`/products/${productId}/statements`} className="hover:text-foreground transition-colors">{product.name}</Link>
-        <ChevronRight className="h-3.5 w-3.5" />
-        <span className="text-foreground font-mono">{statement.vulnerabilityId}</span>
-      </div>
+      <Breadcrumbs
+        items={[
+          { label: "Products", href: "/products" },
+          { label: product.name, href: `/products/${productId}/statements` },
+          { label: statement.vulnerabilityId, mono: true },
+        ]}
+      />
 
       <StatementDetailTabs
         productId={productId}

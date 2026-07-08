@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { assertCanEditProduct } from "@/lib/rbac";
+import { canEditProduct } from "@/lib/rbac";
 import { recordStatementVersion } from "@/lib/vex/statement";
 
 type RouteContext = { params: Promise<{ productId: string; statementId: string }> };
@@ -18,9 +18,7 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
 
   const { productId, statementId } = await params;
 
-  try {
-    await assertCanEditProduct(session.user.id, productId);
-  } catch {
+  if (!(await canEditProduct(session.user.id, productId))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

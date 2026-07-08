@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { assertCanEditProduct, isAdmin } from "@/lib/rbac";
+import { canEditProduct, isAdmin } from "@/lib/rbac";
 import { getResolvedSettings } from "@/lib/settings";
 import { JUSTIFICATIONS } from "@/lib/vex/openvex";
 import { readdir, readFile } from "node:fs/promises";
@@ -27,9 +27,7 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
 
   const { productId } = await params;
 
-  try {
-    await assertCanEditProduct(session.user.id, productId);
-  } catch {
+  if (!(await canEditProduct(session.user.id, productId))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

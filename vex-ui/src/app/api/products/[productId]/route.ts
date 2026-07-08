@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { assertCanViewProduct, assertCanEditProduct } from "@/lib/rbac";
+import { canViewProduct, canEditProduct } from "@/lib/rbac";
 import { z } from "zod";
 
 const updateSchema = z.object({
@@ -24,9 +24,7 @@ export async function GET(request: NextRequest, { params }: RouteContext) {
 
   const { productId } = await params;
 
-  try {
-    await assertCanViewProduct(session.user.id, productId);
-  } catch {
+  if (!(await canViewProduct(session.user.id, productId))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
@@ -48,9 +46,7 @@ export async function PUT(request: NextRequest, { params }: RouteContext) {
 
   const { productId } = await params;
 
-  try {
-    await assertCanEditProduct(session.user.id, productId);
-  } catch {
+  if (!(await canEditProduct(session.user.id, productId))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
@@ -75,9 +71,7 @@ export async function DELETE(request: NextRequest, { params }: RouteContext) {
 
   const { productId } = await params;
 
-  try {
-    await assertCanEditProduct(session.user.id, productId);
-  } catch {
+  if (!(await canEditProduct(session.user.id, productId))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

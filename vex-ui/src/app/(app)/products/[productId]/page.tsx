@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { auth } from "@/lib/auth";
-import { assertCanViewProduct } from "@/lib/rbac";
+import { canViewProduct } from "@/lib/rbac";
 import { headers } from "next/headers";
 import Link from "next/link";
-import { ChevronRight, FileText, Upload, Package, Send } from "lucide-react";
+import { FileText, Upload, Package, Send } from "lucide-react";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { DetailRow } from "@/components/ui/DetailRow";
 
 type Props = { params: Promise<{ productId: string }> };
 
@@ -13,38 +15,27 @@ export default async function ProductPage({ params }: Props) {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session) notFound();
 
-  try {
-    await assertCanViewProduct(session.user.id, productId);
-  } catch {
-    notFound();
-  }
+  if (!(await canViewProduct(session.user.id, productId))) notFound();
 
-  const product = await db.product.findUnique({
-    where: { id: productId },
-    include: {
-      teams: { include: { team: true } },
-      _count: { select: { statements: true, publications: true } },
-    },
-  });
+  const [product, statsByState] = await Promise.all([
+    db.product.findUnique({
+      where: { id: productId },
+      include: {
+        teams: { include: { team: true } },
+        _count: { select: { statements: true, publications: true } },
+      },
+    }),
+    db.statement.groupBy({ by: ["workflowState"], where: { productId }, _count: true }),
+  ]);
 
   if (!product) notFound();
-
-  const statsByState = await db.statement.groupBy({
-    by: ["workflowState"],
-    where: { productId },
-    _count: true,
-  });
 
   const stateMap = Object.fromEntries(statsByState.map((s) => [s.workflowState, s._count]));
   const hasApprovedStatements = (stateMap["APPROVED"] ?? 0) > 0;
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-1 text-sm text-muted-foreground">
-        <Link href="/products" className="hover:text-foreground transition-colors">Products</Link>
-        <ChevronRight className="h-3.5 w-3.5" />
-        <span className="text-foreground">{product.name}</span>
-      </div>
+      <Breadcrumbs items={[{ label: "Products", href: "/products" }, { label: product.name }]} />
 
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">
@@ -97,11 +88,11 @@ export default async function ProductPage({ params }: Props) {
         <div className="rounded-lg border bg-card p-4 space-y-3">
           <h3 className="font-semibold text-sm">Image</h3>
           <dl className="space-y-1.5 text-sm">
-            <Row label="Registry" value={product.registryType.toUpperCase()} />
-            <Row label="Repository" value={product.repository} mono />
-            {product.currentTag && <Row label="Tag" value={product.currentTag} mono />}
+            <DetailRow labelWidth="w-28" label="Registry" value={product.registryType.toUpperCase()} />
+            <DetailRow labelWidth="w-28" label="Repository" value={product.repository} mono />
+            {product.currentTag && <DetailRow labelWidth="w-28" label="Tag" value={product.currentTag} mono />}
             {product.currentDigest && (
-              <Row label="Digest" value={`${product.currentDigest.slice(0, 19)}…`} mono />
+              <DetailRow labelWidth="w-28" label="Digest" value={`${product.currentDigest.slice(0, 19)}…`} mono />
             )}
           </dl>
         </div>
@@ -127,8 +118,8 @@ export default async function ProductPage({ params }: Props) {
       <div className="rounded-lg border bg-card p-4 space-y-3">
         <h3 className="font-semibold text-sm">PURLs</h3>
         <dl className="space-y-1.5 text-sm">
-          <Row label="OCI (Trivy / Wiz)" value={product.ociPurl} mono />
-          {product.dockerPurl && <Row label="Docker (Scout)" value={product.dockerPurl} mono />}
+          <DetailRow labelWidth="w-28" label="OCI (Trivy / Wiz)" value={product.ociPurl} mono />
+          {product.dockerPurl && <DetailRow labelWidth="w-28" label="Docker (Scout)" value={product.dockerPurl} mono />}
         </dl>
       </div>
 
@@ -144,15 +135,6 @@ export default async function ProductPage({ params }: Props) {
           </div>
         </div>
       )}
-    </div>
-  );
-}
-
-function Row({ label, value, mono }: { label: string; value: string; mono?: boolean }) {
-  return (
-    <div className="flex gap-2">
-      <dt className="text-muted-foreground w-28 flex-shrink-0">{label}</dt>
-      <dd className={`truncate ${mono ? "font-mono text-xs" : ""}`}>{value}</dd>
     </div>
   );
 }

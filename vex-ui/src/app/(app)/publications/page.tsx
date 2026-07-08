@@ -7,6 +7,7 @@ import Link from "next/link";
 import { BookOpen } from "lucide-react";
 import { format } from "date-fns";
 import { publicationStateColors } from "@/lib/vex/badges";
+import { Badge } from "@/components/ui/Badge";
 import { PublicationPoller } from "@/components/publications/PublicationPoller";
 
 export default async function PublicationsPage() {
@@ -61,9 +62,7 @@ export default async function PublicationsPage() {
                     </Link>
                   </td>
                   <td className="px-4 py-3">
-                    <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${publicationStateColors[p.state] ?? ""}`}>
-                      {p.state.replace(/_/g, " ")}
-                    </span>
+                    <Badge value={p.state} colors={publicationStateColors} />
                   </td>
                   <td className="px-4 py-3 text-muted-foreground">{p._count.statements}</td>
                   <td className="px-4 py-3 text-muted-foreground text-xs">

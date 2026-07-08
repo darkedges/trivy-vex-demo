@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { assertCanEditProduct } from "@/lib/rbac";
+import { canEditProduct } from "@/lib/rbac";
 import { buildMergedDocument } from "@/lib/vex/merge-doc";
+import { getInFlightStatementIds } from "@/lib/vex/publication";
 import { getResolvedSettings } from "@/lib/settings";
 import { Octokit } from "@octokit/rest";
 import path from "node:path";
@@ -15,9 +16,7 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
 
   const { productId } = await params;
 
-  try {
-    await assertCanEditProduct(session.user.id, productId);
-  } catch {
+  if (!(await canEditProduct(session.user.id, productId))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
@@ -27,17 +26,7 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
   // Exclude statements already caught up in an in-flight publication for this
   // product, so a second click can't create overlapping publications for the
   // same statements.
-  const inFlightStatementIds = (
-    await db.publicationStatement.findMany({
-      where: {
-        publication: {
-          productId,
-          state: { in: ["PENDING_SIGNING", "SIGNING_IN_PROGRESS", "SIGNED", "PUBLISHING"] },
-        },
-      },
-      select: { statementId: true },
-    })
-  ).map((ps) => ps.statementId);
+  const inFlightStatementIds = await getInFlightStatementIds(productId);
 
   const statements = await db.statement.findMany({
     where: { productId, workflowState: "APPROVED", id: { notIn: inFlightStatementIds } },

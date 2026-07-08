@@ -5,6 +5,9 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { Pencil } from "lucide-react";
 import { format } from "date-fns";
 import { statusColors, workflowColors } from "@/lib/vex/badges";
+import { Badge } from "@/components/ui/Badge";
+import { DetailRow } from "@/components/ui/DetailRow";
+import { tabTriggerClass, tabListClass } from "@/components/ui/tabs";
 import { StatementActions } from "./StatementActions";
 import { StatementForm, type StatementFormInitial } from "./StatementForm";
 
@@ -62,17 +65,14 @@ export function StatementDetailTabs({
 
   return (
     <Tabs.Root value={tab} onValueChange={setTab}>
-      <Tabs.List className="flex gap-1 border-b mb-6">
-        <Tabs.Trigger
-          value="overview"
-          className="px-3 py-2 text-sm font-medium text-muted-foreground border-b-2 border-transparent hover:text-foreground transition-colors data-[state=active]:text-foreground data-[state=active]:border-primary"
-        >
+      <Tabs.List className={tabListClass}>
+        <Tabs.Trigger value="overview" className={tabTriggerClass}>
           Overview
         </Tabs.Trigger>
         <Tabs.Trigger
           value="edit"
           disabled={!canEditNow}
-          className="px-3 py-2 text-sm font-medium text-muted-foreground border-b-2 border-transparent hover:text-foreground transition-colors data-[state=active]:text-foreground data-[state=active]:border-primary disabled:opacity-40 disabled:cursor-not-allowed"
+          className={`${tabTriggerClass} disabled:opacity-40 disabled:cursor-not-allowed`}
         >
           Edit
         </Tabs.Trigger>
@@ -83,12 +83,8 @@ export function StatementDetailTabs({
           <div className="space-y-2">
             <h1 className="text-2xl font-bold tracking-tight font-mono">{vulnerabilityId}</h1>
             <div className="flex items-center gap-2">
-              <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${statusColors[status] ?? ""}`}>
-                {status.replace(/_/g, " ")}
-              </span>
-              <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${workflowColors[workflowState] ?? ""}`}>
-                {workflowState.replace(/_/g, " ")}
-              </span>
+              <Badge value={status} colors={statusColors} />
+              <Badge value={workflowState} colors={workflowColors} />
             </div>
           </div>
           {canEditNow && (
@@ -120,12 +116,12 @@ export function StatementDetailTabs({
         <div className="rounded-lg border bg-card p-4 space-y-3">
           <h3 className="font-semibold text-sm">Details</h3>
           <dl className="space-y-1.5 text-sm">
-            <Row label="Justification" value={justification?.replace(/_/g, " ") ?? "—"} />
-            <Row label="Author" value={author} />
-            <Row label="Doc Version" value={String(docVersion)} />
-            <Row label="VEX Doc ID" value={vexDocId} mono />
-            <Row label="Created by" value={createdByName} />
-            {approvedByName && <Row label="Approved by" value={approvedByName} />}
+            <DetailRow label="Justification" value={justification?.replace(/_/g, " ") ?? "—"} />
+            <DetailRow label="Author" value={author} />
+            <DetailRow label="Doc Version" value={String(docVersion)} />
+            <DetailRow label="VEX Doc ID" value={vexDocId} mono />
+            <DetailRow label="Created by" value={createdByName} />
+            {approvedByName && <DetailRow label="Approved by" value={approvedByName} />}
           </dl>
           {statusNotes && (
             <div className="pt-2 border-t">
@@ -183,14 +179,5 @@ export function StatementDetailTabs({
         )}
       </Tabs.Content>
     </Tabs.Root>
-  );
-}
-
-function Row({ label, value, mono }: { label: string; value: string; mono?: boolean }) {
-  return (
-    <div className="flex gap-2">
-      <dt className="text-muted-foreground w-32 flex-shrink-0">{label}</dt>
-      <dd className={`truncate ${mono ? "font-mono text-xs" : ""}`}>{value}</dd>
-    </div>
   );
 }

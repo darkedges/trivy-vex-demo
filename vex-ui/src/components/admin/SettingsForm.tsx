@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import * as Tabs from "@radix-ui/react-tabs";
+import { Field, inputClass } from "@/components/ui/form";
+import { tabTriggerClass, tabListClass } from "@/components/ui/tabs";
 
 const schema = z.object({
   githubOrg: z.string().optional(),
@@ -79,13 +81,9 @@ export function SettingsForm({ initialSettings }: { initialSettings: SettingsFor
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="max-w-2xl">
       <Tabs.Root defaultValue="github">
-        <Tabs.List className="flex gap-1 border-b mb-6">
+        <Tabs.List className={tabListClass}>
           {TABS.map((tab) => (
-            <Tabs.Trigger
-              key={tab.value}
-              value={tab.value}
-              className="px-3 py-2 text-sm font-medium text-muted-foreground border-b-2 border-transparent hover:text-foreground transition-colors data-[state=active]:text-foreground data-[state=active]:border-primary"
-            >
+            <Tabs.Trigger key={tab.value} value={tab.value} className={tabTriggerClass}>
               {tab.label}
             </Tabs.Trigger>
           ))}
@@ -166,18 +164,5 @@ export function SettingsForm({ initialSettings }: { initialSettings: SettingsFor
         {error && <p className="text-sm text-destructive">{error}</p>}
       </div>
     </form>
-  );
-}
-
-const inputClass =
-  "w-full rounded-md border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent";
-
-function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
-  return (
-    <div className="space-y-1">
-      <label className="text-sm font-medium">{label}</label>
-      {children}
-      {hint && <p className="text-xs text-muted-foreground">{hint}</p>}
-    </div>
   );
 }

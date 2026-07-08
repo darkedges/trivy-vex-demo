@@ -1,5 +1,5 @@
 import { RegistryTag, RegistryError } from "./types";
-import { getBearerToken, listTagsV2, getManifestDigest } from "./oci-v2";
+import { listTagsV2, getManifestDigest } from "./oci-v2";
 
 /** Catch-all OCI Distribution Spec v2 client for gcr/acr/generic product types. */
 export async function listGenericTags(repository: string, registryUrl?: string | null): Promise<RegistryTag[]> {
@@ -7,9 +7,8 @@ export async function listGenericTags(repository: string, registryUrl?: string |
     throw new RegistryError("not_configured", "Registry URL is required for this registry type");
   }
 
-  const bearer = await getBearerToken(registryUrl, repository);
-  const allTags = await listTagsV2(registryUrl, repository, bearer);
-  const recent = allTags.slice(-25);
+  const { tags, token: bearer } = await listTagsV2(registryUrl, repository);
+  const recent = tags.slice(-25);
 
   const withDigests = await Promise.all(
     recent.map(async (tag) => ({

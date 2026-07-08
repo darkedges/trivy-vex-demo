@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Upload } from "lucide-react";
 import { workflowColors, statusColors } from "@/lib/vex/badges";
+import { Badge } from "@/components/ui/Badge";
 import { StatementActions } from "@/components/statements/StatementActions";
 
 export default async function AdminPublicationsPage() {
@@ -47,12 +48,8 @@ export default async function AdminPublicationsPage() {
                   </Link>
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-xs text-muted-foreground">{s.product.name}</span>
-                    <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${statusColors[s.status] ?? ""}`}>
-                      {s.status.replace(/_/g, " ")}
-                    </span>
-                    <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${workflowColors[s.workflowState] ?? ""}`}>
-                      {s.workflowState.replace(/_/g, " ")}
-                    </span>
+                    <Badge value={s.status} colors={statusColors} />
+                    <Badge value={s.workflowState} colors={workflowColors} />
                   </div>
                   {s.statusNotes && <p className="text-xs text-muted-foreground line-clamp-2">{s.statusNotes}</p>}
                 </div>

@@ -1,12 +1,14 @@
 import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { auth } from "@/lib/auth";
-import { assertCanViewProduct, canEditProduct } from "@/lib/rbac";
+import { getProductPermissions } from "@/lib/rbac";
+import { getInFlightStatementIds } from "@/lib/vex/publication";
 import { headers } from "next/headers";
-import Link from "next/link";
-import { ChevronRight, FileCheck2 } from "lucide-react";
+import { FileCheck2 } from "lucide-react";
 import { format } from "date-fns";
 import { publicationStateColors } from "@/lib/vex/badges";
+import { Badge } from "@/components/ui/Badge";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import {
   CreatePublicationButton,
   PublishToPagesButton,
@@ -21,28 +23,16 @@ export default async function PublishPage({ params }: Props) {
   const session = await auth.api.getSession({ headers: await headers() });
   if (!session) notFound();
 
-  try {
-    await assertCanViewProduct(session.user.id, productId);
-  } catch {
-    notFound();
-  }
+  const [perms, product, inFlightStatementIds] = await Promise.all([
+    getProductPermissions(session.user.id, productId),
+    db.product.findUnique({ where: { id: productId } }),
+    getInFlightStatementIds(productId),
+  ]);
 
-  const product = await db.product.findUnique({ where: { id: productId } });
+  if (!perms.canView) notFound();
   if (!product) notFound();
 
-  const canEdit = await canEditProduct(session.user.id, productId);
-
-  const inFlightStatementIds = (
-    await db.publicationStatement.findMany({
-      where: {
-        publication: {
-          productId,
-          state: { in: ["PENDING_SIGNING", "SIGNING_IN_PROGRESS", "SIGNED", "PUBLISHING"] },
-        },
-      },
-      select: { statementId: true },
-    })
-  ).map((ps) => ps.statementId);
+  const canEdit = perms.canEdit;
 
   const eligibleCount = await db.statement.count({
     where: { productId, workflowState: "APPROVED", id: { notIn: inFlightStatementIds } },
@@ -62,13 +52,13 @@ export default async function PublishPage({ params }: Props) {
     <div className="space-y-6">
       <PublicationPoller active={hasInFlight} />
 
-      <div className="flex items-center gap-1 text-sm text-muted-foreground">
-        <Link href="/products" className="hover:text-foreground transition-colors">Products</Link>
-        <ChevronRight className="h-3.5 w-3.5" />
-        <Link href={`/products/${productId}`} className="hover:text-foreground transition-colors">{product.name}</Link>
-        <ChevronRight className="h-3.5 w-3.5" />
-        <span className="text-foreground">Publish</span>
-      </div>
+      <Breadcrumbs
+        items={[
+          { label: "Products", href: "/products" },
+          { label: product.name, href: `/products/${productId}` },
+          { label: "Publish" },
+        ]}
+      />
 
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Publish VEX Statements</h1>
@@ -97,9 +87,7 @@ export default async function PublishPage({ params }: Props) {
                 <div className="flex items-start justify-between gap-4">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className={`text-xs font-medium px-1.5 py-0.5 rounded ${publicationStateColors[p.state] ?? ""}`}>
-                        {p.state.replace(/_/g, " ")}
-                      </span>
+                      <Badge value={p.state} colors={publicationStateColors} />
                       <span className="text-xs text-muted-foreground">
                         {p._count.statements} statement{p._count.statements !== 1 ? "s" : ""}
                       </span>

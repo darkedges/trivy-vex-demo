@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { assertIsAdmin } from "@/lib/rbac";
+import { isAdmin } from "@/lib/rbac";
 import { recordStatementVersion } from "@/lib/vex/statement";
 import { z } from "zod";
 
@@ -15,9 +15,7 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
 
   const { productId, statementId } = await params;
 
-  try {
-    await assertIsAdmin(session.user.id);
-  } catch {
+  if (!(await isAdmin(session.user.id))) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

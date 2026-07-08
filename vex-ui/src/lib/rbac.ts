@@ -6,60 +6,69 @@ export async function isAdmin(userId: string): Promise<boolean> {
   return user?.role === Role.ADMIN;
 }
 
-export async function assertIsAdmin(userId: string): Promise<void> {
-  if (!(await isAdmin(userId))) {
-    throw new Error("FORBIDDEN");
-  }
-}
-
 export async function getAccessibleProductIds(userId: string): Promise<string[] | "all"> {
   if (await isAdmin(userId)) return "all";
 
-  const memberships = await db.teamMember.findMany({
-    where: { userId },
-    select: { teamId: true },
-  });
-  const teamIds = memberships.map((m) => m.teamId);
-
+  // One relation-filtered query instead of loading the user's memberships and
+  // then their products separately.
   const productTeams = await db.productTeam.findMany({
-    where: { teamId: { in: teamIds } },
+    where: { team: { members: { some: { userId } } } },
     select: { productId: true },
   });
 
   return [...new Set(productTeams.map((pt) => pt.productId))];
 }
 
-export async function canViewProduct(userId: string, productId: string): Promise<boolean> {
-  const access = await getAccessibleProductIds(userId);
-  if (access === "all") return true;
-  return access.includes(productId);
+/** Products the user may edit (maintainer of an owning team), or "all" for admins. */
+export async function getEditableProductIds(userId: string): Promise<Set<string> | "all"> {
+  if (await isAdmin(userId)) return "all";
+
+  const productTeams = await db.productTeam.findMany({
+    where: { team: { members: { some: { userId, role: "MAINTAINER" } } } },
+    select: { productId: true },
+  });
+
+  return new Set(productTeams.map((pt) => pt.productId));
 }
 
-export async function assertCanViewProduct(userId: string, productId: string): Promise<void> {
-  if (!(await canViewProduct(userId, productId))) throw new Error("FORBIDDEN");
+export async function canViewProduct(userId: string, productId: string): Promise<boolean> {
+  if (await isAdmin(userId)) return true;
+  const pt = await db.productTeam.findFirst({
+    where: { productId, team: { members: { some: { userId } } } },
+    select: { id: true },
+  });
+  return !!pt;
 }
 
 export async function canEditProduct(userId: string, productId: string): Promise<boolean> {
   if (await isAdmin(userId)) return true;
-
-  const memberships = await db.teamMember.findMany({
-    where: { userId },
-    select: { teamId: true, role: true },
+  const pt = await db.productTeam.findFirst({
+    where: { productId, team: { members: { some: { userId, role: "MAINTAINER" } } } },
+    select: { id: true },
   });
-
-  const maintainerTeamIds = memberships
-    .filter((m) => m.role === "MAINTAINER")
-    .map((m) => m.teamId);
-
-  if (maintainerTeamIds.length === 0) return false;
-
-  const productTeam = await db.productTeam.findFirst({
-    where: { productId, teamId: { in: maintainerTeamIds } },
-  });
-
-  return !!productTeam;
+  return !!pt;
 }
 
-export async function assertCanEditProduct(userId: string, productId: string): Promise<void> {
-  if (!(await canEditProduct(userId, productId))) throw new Error("FORBIDDEN");
+export interface ProductPermissions {
+  isAdmin: boolean;
+  canView: boolean;
+  canEdit: boolean;
+}
+
+/**
+ * Resolves all three permission flags for one product in a single membership
+ * query (plus the admin short-circuit) — for pages that would otherwise call
+ * isAdmin / canView / canEdit separately and re-run the same lookups.
+ */
+export async function getProductPermissions(userId: string, productId: string): Promise<ProductPermissions> {
+  if (await isAdmin(userId)) return { isAdmin: true, canView: true, canEdit: true };
+
+  const memberships = await db.teamMember.findMany({
+    where: { userId, team: { products: { some: { productId } } } },
+    select: { role: true },
+  });
+
+  const canView = memberships.length > 0;
+  const canEdit = memberships.some((m) => m.role === "MAINTAINER");
+  return { isAdmin: false, canView, canEdit };
 }
