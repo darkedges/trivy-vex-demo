@@ -1,18 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { isAdmin } from "@/lib/rbac";
+import { withAdmin } from "@/lib/api-auth";
 import { getResolvedSettings } from "@/lib/settings";
 import { Octokit } from "@octokit/rest";
 
-export async function POST(request: NextRequest) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  if (!(await isAdmin(session.user.id))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const POST = withAdmin(async (_request, { session }) => {
   const { githubOrg: org } = await getResolvedSettings();
   if (!org) {
     return NextResponse.json({ error: "GitHub org not configured" }, { status: 400 });
@@ -77,4 +69,4 @@ export async function POST(request: NextRequest) {
     const message = err instanceof Error ? err.message : "GitHub API error";
     return NextResponse.json({ error: message }, { status: 500 });
   }
-}
+});

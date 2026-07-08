@@ -1,7 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { canViewProduct, canEditProduct } from "@/lib/rbac";
+import { withProductView, withProductEdit } from "@/lib/api-auth";
 import { z } from "zod";
 
 const updateSchema = z.object({
@@ -16,18 +15,9 @@ const updateSchema = z.object({
   currentDigest: z.string().optional(),
 });
 
-type RouteContext = { params: Promise<{ productId: string }> };
+type Params = { productId: string };
 
-export async function GET(request: NextRequest, { params }: RouteContext) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { productId } = await params;
-
-  if (!(await canViewProduct(session.user.id, productId))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const GET = withProductView<Params>(async (_request, { params: { productId } }) => {
   const product = await db.product.findUnique({
     where: { id: productId },
     include: {
@@ -38,18 +28,9 @@ export async function GET(request: NextRequest, { params }: RouteContext) {
 
   if (!product) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(product);
-}
+});
 
-export async function PUT(request: NextRequest, { params }: RouteContext) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { productId } = await params;
-
-  if (!(await canEditProduct(session.user.id, productId))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const PUT = withProductEdit<Params>(async (request, { params: { productId } }) => {
   const body = await request.json();
   const parsed = updateSchema.safeParse(body);
   if (!parsed.success) {
@@ -63,18 +44,9 @@ export async function PUT(request: NextRequest, { params }: RouteContext) {
   });
 
   return NextResponse.json(product);
-}
+});
 
-export async function DELETE(request: NextRequest, { params }: RouteContext) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { productId } = await params;
-
-  if (!(await canEditProduct(session.user.id, productId))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const DELETE = withProductEdit<Params>(async (_request, { params: { productId } }) => {
   await db.product.delete({ where: { id: productId } });
   return NextResponse.json({ deleted: true });
-}
+});

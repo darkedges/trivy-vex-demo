@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { isAdmin } from "@/lib/rbac";
+import { withAdmin } from "@/lib/api-auth";
 import { z } from "zod";
 
 const settingsSchema = z.object({
@@ -21,14 +20,7 @@ const settingsSchema = z.object({
   vexDocBaseUrl: z.string().url().optional().or(z.literal("")),
 });
 
-export async function GET(request: NextRequest) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  if (!(await isAdmin(session.user.id))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const GET = withAdmin(async () => {
   const settings = await db.appSettings.findUnique({ where: { id: "singleton" } });
   // Mask the callback secret
   const safe = settings
@@ -36,16 +28,9 @@ export async function GET(request: NextRequest) {
     : null;
 
   return NextResponse.json(safe ?? {});
-}
+});
 
-export async function PUT(request: NextRequest) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  if (!(await isAdmin(session.user.id))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const PUT = withAdmin(async (request) => {
   const body = await request.json();
   const parsed = settingsSchema.safeParse(body);
   if (!parsed.success) {
@@ -65,4 +50,4 @@ export async function PUT(request: NextRequest) {
   });
 
   return NextResponse.json({ ...settings, signingCallbackSecret: settings.signingCallbackSecret ? "••••••••" : null });
-}
+});

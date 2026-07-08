@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { getAccessibleProductIds, isAdmin } from "@/lib/rbac";
+import { withSession } from "@/lib/api-auth";
 import { z } from "zod";
 
 const createSchema = z.object({
@@ -18,10 +18,7 @@ const createSchema = z.object({
   teamIds: z.array(z.string()).optional(),
 });
 
-export async function GET(request: NextRequest) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
+export const GET = withSession(async (_request, { session }) => {
   const access = await getAccessibleProductIds(session.user.id);
 
   const products = await db.product.findMany({
@@ -34,12 +31,9 @@ export async function GET(request: NextRequest) {
   });
 
   return NextResponse.json(products);
-}
+});
 
-export async function POST(request: NextRequest) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
+export const POST = withSession(async (request, { session }) => {
   const body = await request.json();
   const parsed = createSchema.safeParse(body);
   if (!parsed.success) {
@@ -89,4 +83,4 @@ export async function POST(request: NextRequest) {
   });
 
   return NextResponse.json(product, { status: 201 });
-}
+});

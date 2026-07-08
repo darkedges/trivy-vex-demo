@@ -1,24 +1,14 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { isAdmin } from "@/lib/rbac";
+import { withAdmin } from "@/lib/api-auth";
 import { recordStatementVersion } from "@/lib/vex/statement";
 import { z } from "zod";
 
 const rejectSchema = z.object({ note: z.string().min(1, "A rejection note is required").max(1000) });
 
-type RouteContext = { params: Promise<{ productId: string; statementId: string }> };
+type Params = { productId: string; statementId: string };
 
-export async function POST(request: NextRequest, { params }: RouteContext) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { productId, statementId } = await params;
-
-  if (!(await isAdmin(session.user.id))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const POST = withAdmin<Params>(async (request, { session, params: { productId, statementId } }) => {
   const body = await request.json();
   const parsed = rejectSchema.safeParse(body);
   if (!parsed.success) {
@@ -45,4 +35,4 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
   });
 
   return NextResponse.json(statement);
-}
+});

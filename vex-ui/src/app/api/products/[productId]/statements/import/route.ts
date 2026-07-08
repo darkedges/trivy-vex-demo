@@ -1,7 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { canEditProduct } from "@/lib/rbac";
+import { withProductEdit } from "@/lib/api-auth";
 import { buildVexDocId, buildProductsJson } from "@/lib/vex/openvex";
 import { getResolvedSettings } from "@/lib/settings";
 import { z } from "zod";
@@ -19,18 +18,7 @@ const importSchema = z.object({
 
 const IMPORT_STATUS_NOTES = "Imported from a Trivy scan — under investigation; not yet assessed.";
 
-type RouteContext = { params: Promise<{ productId: string }> };
-
-export async function POST(request: NextRequest, { params }: RouteContext) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { productId } = await params;
-
-  if (!(await canEditProduct(session.user.id, productId))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const POST = withProductEdit<{ productId: string }>(async (request, { session, params: { productId } }) => {
   const body = await request.json();
   const parsed = importSchema.safeParse(body);
   if (!parsed.success) {
@@ -78,4 +66,4 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
   }
 
   return NextResponse.json({ created, skipped });
-}
+});

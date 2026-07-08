@@ -1,21 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { canViewProduct } from "@/lib/rbac";
+import { withProductView } from "@/lib/api-auth";
 import { listRegistryTags, RegistryError } from "@/lib/registry";
 
-type RouteContext = { params: Promise<{ productId: string }> };
-
-export async function GET(request: NextRequest, { params }: RouteContext) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { productId } = await params;
-
-  if (!(await canViewProduct(session.user.id, productId))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const GET = withProductView<{ productId: string }>(async (_request, { params: { productId } }) => {
   const product = await db.product.findUnique({ where: { id: productId } });
   if (!product) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
@@ -30,4 +18,4 @@ export async function GET(request: NextRequest, { params }: RouteContext) {
     const message = err instanceof Error ? err.message : "Failed to list registry tags";
     return NextResponse.json({ error: message }, { status: 502 });
   }
-}
+});

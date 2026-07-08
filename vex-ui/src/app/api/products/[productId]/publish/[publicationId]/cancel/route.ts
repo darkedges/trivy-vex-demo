@@ -1,9 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { canEditProduct } from "@/lib/rbac";
+import { withProductEdit } from "@/lib/api-auth";
 
-type RouteContext = { params: Promise<{ productId: string; publicationId: string }> };
+type Params = { productId: string; publicationId: string };
 
 /**
  * Escape hatch for publications stuck in an in-flight state — e.g. a signing
@@ -13,16 +12,7 @@ type RouteContext = { params: Promise<{ productId: string; publicationId: string
  * filter forever. A late signing callback after cancellation is rejected by
  * the callback route's state guard.
  */
-export async function POST(request: NextRequest, { params }: RouteContext) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { productId, publicationId } = await params;
-
-  if (!(await canEditProduct(session.user.id, productId))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const POST = withProductEdit<Params>(async (_request, { session, params: { productId, publicationId } }) => {
   const publication = await db.publication.findUnique({ where: { id: publicationId } });
   if (!publication || publication.productId !== productId) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
@@ -45,4 +35,4 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
   });
 
   return NextResponse.json(updated);
-}
+});

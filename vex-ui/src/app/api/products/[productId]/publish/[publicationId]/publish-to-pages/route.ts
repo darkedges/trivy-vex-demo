@@ -1,7 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { canEditProduct } from "@/lib/rbac";
+import { withProductEdit } from "@/lib/api-auth";
 import { buildVexRepoArchive } from "@/lib/vex/repo-archive";
 import { buildIndexPackageId } from "@/lib/vex/purl";
 import { buildRepoIndexHtml } from "@/lib/vex/repo-index-page";
@@ -10,18 +9,9 @@ import { getResolvedSettings } from "@/lib/settings";
 import { Octokit } from "@octokit/rest";
 import { createHash } from "node:crypto";
 
-type RouteContext = { params: Promise<{ productId: string; publicationId: string }> };
+type Params = { productId: string; publicationId: string };
 
-export async function POST(request: NextRequest, { params }: RouteContext) {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const { productId, publicationId } = await params;
-
-  if (!(await canEditProduct(session.user.id, productId))) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
-
+export const POST = withProductEdit<Params>(async (_request, { params: { productId, publicationId } }) => {
   const publication = await db.publication.findUnique({ where: { id: publicationId } });
   if (!publication || publication.productId !== productId) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
@@ -216,4 +206,4 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
     });
     return NextResponse.json({ error: message }, { status: 502 });
   }
-}
+});
